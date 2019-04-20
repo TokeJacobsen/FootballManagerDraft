@@ -5,7 +5,7 @@ using System.Web;
 
 namespace FmDraft.Models
 {
-    public class Goalkeeper
+    public class Goalkeeper : Player
     {
         public byte Throwing { get; set; }
         public byte TendencyToPunch { get; set; }

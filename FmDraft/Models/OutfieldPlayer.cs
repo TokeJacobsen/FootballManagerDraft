@@ -5,7 +5,7 @@ using System.Web;
 
 namespace FmDraft.Models
 {
-    public class OutfieldPlayer
+    public class OutfieldPlayer : Player
     {
         public byte Technique { get; set; }
         public byte Tackling { get; set; }
