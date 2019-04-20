@@ -10,6 +10,17 @@ namespace FmDraft.Controllers
     {
         public ActionResult Index()
         {
+            using (var db = new FMDraftEntities())
+            {
+                var query = from b in db.Players select b;
+
+                foreach(var item in query)
+                {
+                    System.Diagnostics.Debug.WriteLine(item.Name);
+                }
+
+            }
+               
             return View();
         }
 

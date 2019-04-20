@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FMDraftModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Clubs">
+          <Key>
+            <PropertyRef Name="ID_Club" />
+          </Key>
+          <Property Name="ID_Club" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClubName" Type="varchar" MaxLength="50" />
+          <Property Name="FK_Division" Type="int" />
+        </EntityType>
+        <EntityType Name="Divisions">
+          <Key>
+            <PropertyRef Name="ID_Division" />
+          </Key>
+          <Property Name="ID_Division" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DivisionName" Type="varchar" MaxLength="50" />
+          <Property Name="Based" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Players">
+          <Key>
+            <PropertyRef Name="ID_Player" />
+          </Key>
+          <Property Name="ID_Player" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" />
+          <Property Name="Nationality" Type="varchar" MaxLength="50" />
+          <Property Name="FK_Club" Type="int" />
+          <Property Name="Acceleration" Type="tinyint" />
+          <Property Name="Workrate" Type="tinyint" />
+          <Property Name="Vision" Type="tinyint" />
+          <Property Name="Thowing" Type="tinyint" />
+          <Property Name="Tendency_to_punch_ball" Type="tinyint" />
+          <Property Name="Technique" Type="tinyint" />
+          <Property Name="Teamwork" Type="tinyint" />
+          <Property Name="Tackling" Type="tinyint" />
+          <Property Name="Strentgh" Type="tinyint" />
+          <Property Name="Stamina" Type="tinyint" />
+          <Property Name="Rushing_out" Type="tinyint" />
+          <Property Name="Reflexes" Type="tinyint" />
+          <Property Name="Positioning" Type="tinyint" />
+          <Property Name="Pentalty_kick" Type="tinyint" />
+          <Property Name="Passing" Type="tinyint" />
+          <Property Name="Pace" Type="tinyint" />
+          <Property Name="One_on_one" Type="tinyint" />
+          <Property Name="Off_the_ball" Type="tinyint" />
+          <Property Name="Natural_fitness" Type="tinyint" />
+          <Property Name="Marking" Type="tinyint" />
+          <Property Name="Long_throw" Type="tinyint" />
+          <Property Name="Longshot" Type="tinyint" />
+          <Property Name="Leadership" Type="tinyint" />
+          <Property Name="Kicking" Type="tinyint" />
+          <Property Name="Jumping" Type="tinyint" />
+          <Property Name="Heading" Type="tinyint" />
+          <Property Name="Handling" Type="tinyint" />
+          <Property Name="Free_kick" Type="tinyint" />
+          <Property Name="Flair" Type="tinyint" />
+          <Property Name="First_touch" Type="tinyint" />
+          <Property Name="Finishing" Type="tinyint" />
+          <Property Name="Eccentricity" Type="tinyint" />
+          <Property Name="Dribbling" Type="tinyint" />
+          <Property Name="Determination" Type="tinyint" />
+          <Property Name="Decisions" Type="tinyint" />
+          <Property Name="Crossing" Type="tinyint" />
+          <Property Name="Corner_kick" Type="tinyint" />
+          <Property Name="Concentration" Type="tinyint" />
+          <Property Name="Composure" Type="tinyint" />
+          <Property Name="Communication" Type="tinyint" />
+          <Property Name="Command_of_area" Type="tinyint" />
+          <Property Name="Bravery" Type="tinyint" />
+          <Property Name="Balance" Type="tinyint" />
+          <Property Name="Anticipation" Type="tinyint" />
+          <Property Name="Agility" Type="tinyint" />
+          <Property Name="Aggression" Type="tinyint" />
+          <Property Name="Aerial" Type="tinyint" />
+          <Property Name="Value" Type="varchar" MaxLength="10" />
+          <Property Name="Position" Type="varchar" MaxLength="10" />
+          <Property Name="Age" Type="tinyint" />
+          <Property Name="Hight" Type="int" />
+          <Property Name="Weight" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Clubs_Divisions">
+          <End Role="Divisions" Type="Self.Divisions" Multiplicity="0..1" />
+          <End Role="Clubs" Type="Self.Clubs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Divisions">
+              <PropertyRef Name="ID_Division" />
+            </Principal>
+            <Dependent Role="Clubs">
+              <PropertyRef Name="FK_Division" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Players_Clubs">
+          <End Role="Clubs" Type="Self.Clubs" Multiplicity="0..1" />
+          <End Role="Players" Type="Self.Players" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clubs">
+              <PropertyRef Name="ID_Club" />
+            </Principal>
+            <Dependent Role="Players">
+              <PropertyRef Name="FK_Club" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FMDraftModelStoreContainer">
+          <EntitySet Name="Clubs" EntityType="Self.Clubs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Divisions" EntityType="Self.Divisions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Players" EntityType="Self.Players" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Clubs_Divisions" Association="Self.FK_Clubs_Divisions">
+            <End Role="Divisions" EntitySet="Divisions" />
+            <End Role="Clubs" EntitySet="Clubs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Players_Clubs" Association="Self.FK_Players_Clubs">
+            <End Role="Clubs" EntitySet="Clubs" />
+            <End Role="Players" EntitySet="Players" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FMDraftModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Clubs">
+          <Key>
+            <PropertyRef Name="ID_Club" />
+          </Key>
+          <Property Name="ID_Club" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClubName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FK_Division" Type="Int32" />
+          <NavigationProperty Name="Divisions" Relationship="Self.FK_Clubs_Divisions" FromRole="Clubs" ToRole="Divisions" />
+          <NavigationProperty Name="Players" Relationship="Self.FK_Players_Clubs" FromRole="Clubs" ToRole="Players" />
+        </EntityType>
+        <EntityType Name="Divisions">
+          <Key>
+            <PropertyRef Name="ID_Division" />
+          </Key>
+          <Property Name="ID_Division" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DivisionName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Based" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Clubs" Relationship="Self.FK_Clubs_Divisions" FromRole="Divisions" ToRole="Clubs" />
+        </EntityType>
+        <EntityType Name="Players">
+          <Key>
+            <PropertyRef Name="ID_Player" />
+          </Key>
+          <Property Name="ID_Player" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FK_Club" Type="Int32" />
+          <Property Name="Acceleration" Type="Byte" />
+          <Property Name="Workrate" Type="Byte" />
+          <Property Name="Vision" Type="Byte" />
+          <Property Name="Thowing" Type="Byte" />
+          <Property Name="Tendency_to_punch_ball" Type="Byte" />
+          <Property Name="Technique" Type="Byte" />
+          <Property Name="Teamwork" Type="Byte" />
+          <Property Name="Tackling" Type="Byte" />
+          <Property Name="Strentgh" Type="Byte" />
+          <Property Name="Stamina" Type="Byte" />
+          <Property Name="Rushing_out" Type="Byte" />
+          <Property Name="Reflexes" Type="Byte" />
+          <Property Name="Positioning" Type="Byte" />
+          <Property Name="Pentalty_kick" Type="Byte" />
+          <Property Name="Passing" Type="Byte" />
+          <Property Name="Pace" Type="Byte" />
+          <Property Name="One_on_one" Type="Byte" />
+          <Property Name="Off_the_ball" Type="Byte" />
+          <Property Name="Natural_fitness" Type="Byte" />
+          <Property Name="Marking" Type="Byte" />
+          <Property Name="Long_throw" Type="Byte" />
+          <Property Name="Longshot" Type="Byte" />
+          <Property Name="Leadership" Type="Byte" />
+          <Property Name="Kicking" Type="Byte" />
+          <Property Name="Jumping" Type="Byte" />
+          <Property Name="Heading" Type="Byte" />
+          <Property Name="Handling" Type="Byte" />
+          <Property Name="Free_kick" Type="Byte" />
+          <Property Name="Flair" Type="Byte" />
+          <Property Name="First_touch" Type="Byte" />
+          <Property Name="Finishing" Type="Byte" />
+          <Property Name="Eccentricity" Type="Byte" />
+          <Property Name="Dribbling" Type="Byte" />
+          <Property Name="Determination" Type="Byte" />
+          <Property Name="Decisions" Type="Byte" />
+          <Property Name="Crossing" Type="Byte" />
+          <Property Name="Corner_kick" Type="Byte" />
+          <Property Name="Concentration" Type="Byte" />
+          <Property Name="Composure" Type="Byte" />
+          <Property Name="Communication" Type="Byte" />
+          <Property Name="Command_of_area" Type="Byte" />
+          <Property Name="Bravery" Type="Byte" />
+          <Property Name="Balance" Type="Byte" />
+          <Property Name="Anticipation" Type="Byte" />
+          <Property Name="Agility" Type="Byte" />
+          <Property Name="Aggression" Type="Byte" />
+          <Property Name="Aerial" Type="Byte" />
+          <Property Name="Value" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Position" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Age" Type="Byte" />
+          <Property Name="Hight" Type="Int32" />
+          <Property Name="Weight" Type="Byte" />
+          <NavigationProperty Name="Clubs" Relationship="Self.FK_Players_Clubs" FromRole="Players" ToRole="Clubs" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Clubs_Divisions">
+          <End Role="Divisions" Type="Self.Divisions" Multiplicity="0..1" />
+          <End Role="Clubs" Type="Self.Clubs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Divisions">
+              <PropertyRef Name="ID_Division" />
+            </Principal>
+            <Dependent Role="Clubs">
+              <PropertyRef Name="FK_Division" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Players_Clubs">
+          <End Role="Clubs" Type="Self.Clubs" Multiplicity="0..1" />
+          <End Role="Players" Type="Self.Players" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clubs">
+              <PropertyRef Name="ID_Club" />
+            </Principal>
+            <Dependent Role="Players">
+              <PropertyRef Name="FK_Club" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FMDraftEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Clubs" EntityType="Self.Clubs" />
+          <EntitySet Name="Divisions" EntityType="Self.Divisions" />
+          <EntitySet Name="Players" EntityType="Self.Players" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <AssociationSet Name="FK_Clubs_Divisions" Association="Self.FK_Clubs_Divisions">
+            <End Role="Divisions" EntitySet="Divisions" />
+            <End Role="Clubs" EntitySet="Clubs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Players_Clubs" Association="Self.FK_Players_Clubs">
+            <End Role="Clubs" EntitySet="Clubs" />
+            <End Role="Players" EntitySet="Players" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FMDraftModelStoreContainer" CdmEntityContainer="FMDraftEntities">
+          <EntitySetMapping Name="Clubs">
+            <EntityTypeMapping TypeName="FMDraftModel.Clubs">
+              <MappingFragment StoreEntitySet="Clubs">
+                <ScalarProperty Name="ID_Club" ColumnName="ID_Club" />
+                <ScalarProperty Name="ClubName" ColumnName="ClubName" />
+                <ScalarProperty Name="FK_Division" ColumnName="FK_Division" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Divisions">
+            <EntityTypeMapping TypeName="FMDraftModel.Divisions">
+              <MappingFragment StoreEntitySet="Divisions">
+                <ScalarProperty Name="ID_Division" ColumnName="ID_Division" />
+                <ScalarProperty Name="DivisionName" ColumnName="DivisionName" />
+                <ScalarProperty Name="Based" ColumnName="Based" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Players">
+            <EntityTypeMapping TypeName="FMDraftModel.Players">
+              <MappingFragment StoreEntitySet="Players">
+                <ScalarProperty Name="ID_Player" ColumnName="ID_Player" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+                <ScalarProperty Name="FK_Club" ColumnName="FK_Club" />
+                <ScalarProperty Name="Acceleration" ColumnName="Acceleration" />
+                <ScalarProperty Name="Workrate" ColumnName="Workrate" />
+                <ScalarProperty Name="Vision" ColumnName="Vision" />
+                <ScalarProperty Name="Thowing" ColumnName="Thowing" />
+                <ScalarProperty Name="Tendency_to_punch_ball" ColumnName="Tendency_to_punch_ball" />
+                <ScalarProperty Name="Technique" ColumnName="Technique" />
+                <ScalarProperty Name="Teamwork" ColumnName="Teamwork" />
+                <ScalarProperty Name="Tackling" ColumnName="Tackling" />
+                <ScalarProperty Name="Strentgh" ColumnName="Strentgh" />
+                <ScalarProperty Name="Stamina" ColumnName="Stamina" />
+                <ScalarProperty Name="Rushing_out" ColumnName="Rushing_out" />
+                <ScalarProperty Name="Reflexes" ColumnName="Reflexes" />
+                <ScalarProperty Name="Positioning" ColumnName="Positioning" />
+                <ScalarProperty Name="Pentalty_kick" ColumnName="Pentalty_kick" />
+                <ScalarProperty Name="Passing" ColumnName="Passing" />
+                <ScalarProperty Name="Pace" ColumnName="Pace" />
+                <ScalarProperty Name="One_on_one" ColumnName="One_on_one" />
+                <ScalarProperty Name="Off_the_ball" ColumnName="Off_the_ball" />
+                <ScalarProperty Name="Natural_fitness" ColumnName="Natural_fitness" />
+                <ScalarProperty Name="Marking" ColumnName="Marking" />
+                <ScalarProperty Name="Long_throw" ColumnName="Long_throw" />
+                <ScalarProperty Name="Longshot" ColumnName="Longshot" />
+                <ScalarProperty Name="Leadership" ColumnName="Leadership" />
+                <ScalarProperty Name="Kicking" ColumnName="Kicking" />
+                <ScalarProperty Name="Jumping" ColumnName="Jumping" />
+                <ScalarProperty Name="Heading" ColumnName="Heading" />
+                <ScalarProperty Name="Handling" ColumnName="Handling" />
+                <ScalarProperty Name="Free_kick" ColumnName="Free_kick" />
+                <ScalarProperty Name="Flair" ColumnName="Flair" />
+                <ScalarProperty Name="First_touch" ColumnName="First_touch" />
+                <ScalarProperty Name="Finishing" ColumnName="Finishing" />
+                <ScalarProperty Name="Eccentricity" ColumnName="Eccentricity" />
+                <ScalarProperty Name="Dribbling" ColumnName="Dribbling" />
+                <ScalarProperty Name="Determination" ColumnName="Determination" />
+                <ScalarProperty Name="Decisions" ColumnName="Decisions" />
+                <ScalarProperty Name="Crossing" ColumnName="Crossing" />
+                <ScalarProperty Name="Corner_kick" ColumnName="Corner_kick" />
+                <ScalarProperty Name="Concentration" ColumnName="Concentration" />
+                <ScalarProperty Name="Composure" ColumnName="Composure" />
+                <ScalarProperty Name="Communication" ColumnName="Communication" />
+                <ScalarProperty Name="Command_of_area" ColumnName="Command_of_area" />
+                <ScalarProperty Name="Bravery" ColumnName="Bravery" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="Anticipation" ColumnName="Anticipation" />
+                <ScalarProperty Name="Agility" ColumnName="Agility" />
+                <ScalarProperty Name="Aggression" ColumnName="Aggression" />
+                <ScalarProperty Name="Aerial" ColumnName="Aerial" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Hight" ColumnName="Hight" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="FMDraftModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
