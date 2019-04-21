@@ -10,7 +10,7 @@ namespace FmDraft.Controllers
     {
         public ActionResult Index()
         {
-            using (var db = new FMDraftEntities())
+            using (var db = new FMDraftEntities1())
             {
 
                     var players = from p in db.Players
@@ -18,13 +18,14 @@ namespace FmDraft.Controllers
                                   select p;
                     foreach (var player in players)
                     {
-                    if(player.Position.Equals("GK"))
-                        System.Diagnostics.Debug.WriteLine("'"+player.Position+"'");
-
-                    }
+                        System.Diagnostics.Debug.WriteLine("'"+player.Value+"'");
+                    System.Diagnostics.Debug.WriteLine(Models.Generator.DataCleaner.ConvertValueToNumber(player.Value));
 
 
-                
+                }
+
+
+
 
             }
                

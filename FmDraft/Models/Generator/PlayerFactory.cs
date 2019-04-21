@@ -10,4 +10,6 @@ namespace FmDraft.Models.Generator
     {
         Player GetPlayer(Players player);
     }
+
+
 }

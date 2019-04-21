@@ -134,25 +134,32 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Clubs.cs">
+      <DependentUpon>DbContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="DatabaseModel.Context.cs">
+    <Compile Include="DbContext.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseModel.Context.tt</DependentUpon>
+      <DependentUpon>DbContext.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseModel.cs">
+    <Compile Include="DbContext.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
+      <DependentUpon>DbContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseModel.Designer.cs">
+    <Compile Include="DbContext.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseModel.edmx</DependentUpon>
+      <DependentUpon>DbContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Divisions.cs">
+      <DependentUpon>DbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Generator\DataCleaner.cs" />
     <Compile Include="Models\Generator\GoalkeeperFactory.cs" />
     <Compile Include="Models\Generator\OutfieldPlayerFactory.cs" />
     <Compile Include="Models\Generator\PlayerFactory.cs" />
@@ -162,22 +169,28 @@
     <Compile Include="Models\ViewModels\Goalkeeper.cs" />
     <Compile Include="Models\ViewModels\OutfieldPlayer.cs" />
     <Compile Include="Models\ViewModels\Player.cs" />
+    <Compile Include="Players.cs">
+      <DependentUpon>DbContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>DbContext.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="DatabaseModel.Context.tt">
+    <Content Include="DbContext.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DatabaseModel.Context.cs</LastGenOutput>
-      <DependentUpon>DatabaseModel.edmx</DependentUpon>
+      <DependentUpon>DbContext.edmx</DependentUpon>
+      <LastGenOutput>DbContext.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DatabaseModel.tt">
+    <Content Include="DbContext.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DatabaseModel.edmx</DependentUpon>
-      <LastGenOutput>DatabaseModel.cs</LastGenOutput>
+      <DependentUpon>DbContext.edmx</DependentUpon>
+      <LastGenOutput>DbContext.cs</LastGenOutput>
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -185,12 +198,12 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="DatabaseModel.edmx">
+    <EntityDeploy Include="DbContext.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DatabaseModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>DbContext.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="DatabaseModel.edmx.diagram">
-      <DependentUpon>DatabaseModel.edmx</DependentUpon>
+    <Content Include="DbContext.edmx.diagram">
+      <DependentUpon>DbContext.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
