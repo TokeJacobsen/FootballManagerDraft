@@ -12,8 +12,6 @@ namespace FmDraft.Controllers
         public ActionResult Index()
         {
 
-     
-
             return View();
         }
 
