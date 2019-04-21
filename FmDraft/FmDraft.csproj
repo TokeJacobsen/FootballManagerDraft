@@ -168,6 +168,7 @@
     <Compile Include="Models\Init\DivisionList.cs" />
     <Compile Include="Models\Init\Formations.cs" />
     <Compile Include="Models\Init\Formation.cs" />
+    <Compile Include="Models\Init\User.cs" />
     <Compile Include="Models\ViewModels\Club.cs" />
     <Compile Include="Models\ViewModels\Division.cs" />
     <Compile Include="Models\ViewModels\Goalkeeper.cs" />

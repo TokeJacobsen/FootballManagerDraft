@@ -15,6 +15,13 @@ namespace FmDraft.Controllers
             Dictionary<string, Formation> formationDictionary = formations.GetFormations();
             ViewData["Formations"] = formationDictionary;
 
+            User player1 = new User();
+            User player2 = new User();
+            ViewData["player1"] = player1;
+            ViewData["player2"] = player2;
+
+
+
             return View();
         }
 
