@@ -159,6 +159,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Generator\PlayerFactory.cs" />
+    <Compile Include="Models\ViewModels\Club.cs" />
+    <Compile Include="Models\ViewModels\Division.cs" />
+    <Compile Include="Models\ViewModels\Goalkeeper.cs" />
+    <Compile Include="Models\ViewModels\OutfieldPlayer.cs" />
+    <Compile Include="Models\ViewModels\Player.cs" />
     <Compile Include="Players.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
@@ -223,7 +229,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

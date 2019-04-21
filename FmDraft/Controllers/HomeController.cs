@@ -12,12 +12,19 @@ namespace FmDraft.Controllers
         {
             using (var db = new FMDraftEntities())
             {
-                var query = from b in db.Players select b;
 
-                foreach(var item in query)
-                {
-                    System.Diagnostics.Debug.WriteLine(item.Name);
-                }
+                    var players = from p in db.Players
+                                  where p.Clubs.Divisions.DivisionName.Equals("Superliga")
+                                  select p;
+                    foreach (var player in players)
+                    {
+                    if(player.Position.Equals("GK"))
+                        System.Diagnostics.Debug.WriteLine("'"+player.Position+"'");
+
+                    }
+
+
+                
 
             }
                
