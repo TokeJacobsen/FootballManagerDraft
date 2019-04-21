@@ -13,10 +13,10 @@ namespace FmDraft
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class FMDraftEntities : DbContext
+    public partial class FMDraftEntities1 : DbContext
     {
-        public FMDraftEntities()
-            : base("name=FMDraftEntities")
+        public FMDraftEntities1()
+            : base("name=FMDraftEntities1")
         {
         }
     

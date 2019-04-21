@@ -26,61 +26,61 @@
             <PropertyRef Name="ID_Player" />
           </Key>
           <Property Name="ID_Player" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="100" />
-          <Property Name="Nationality" Type="varchar" MaxLength="50" />
-          <Property Name="FK_Club" Type="int" />
-          <Property Name="Acceleration" Type="tinyint" />
-          <Property Name="Workrate" Type="tinyint" />
-          <Property Name="Vision" Type="tinyint" />
-          <Property Name="Thowing" Type="tinyint" />
-          <Property Name="Tendency_to_punch_ball" Type="tinyint" />
-          <Property Name="Technique" Type="tinyint" />
-          <Property Name="Teamwork" Type="tinyint" />
-          <Property Name="Tackling" Type="tinyint" />
-          <Property Name="Strentgh" Type="tinyint" />
-          <Property Name="Stamina" Type="tinyint" />
-          <Property Name="Rushing_out" Type="tinyint" />
-          <Property Name="Reflexes" Type="tinyint" />
-          <Property Name="Positioning" Type="tinyint" />
-          <Property Name="Pentalty_kick" Type="tinyint" />
-          <Property Name="Passing" Type="tinyint" />
-          <Property Name="Pace" Type="tinyint" />
-          <Property Name="One_on_one" Type="tinyint" />
-          <Property Name="Off_the_ball" Type="tinyint" />
-          <Property Name="Natural_fitness" Type="tinyint" />
-          <Property Name="Marking" Type="tinyint" />
-          <Property Name="Long_throw" Type="tinyint" />
-          <Property Name="Longshot" Type="tinyint" />
-          <Property Name="Leadership" Type="tinyint" />
-          <Property Name="Kicking" Type="tinyint" />
-          <Property Name="Jumping" Type="tinyint" />
-          <Property Name="Heading" Type="tinyint" />
-          <Property Name="Handling" Type="tinyint" />
-          <Property Name="Free_kick" Type="tinyint" />
-          <Property Name="Flair" Type="tinyint" />
-          <Property Name="First_touch" Type="tinyint" />
-          <Property Name="Finishing" Type="tinyint" />
-          <Property Name="Eccentricity" Type="tinyint" />
-          <Property Name="Dribbling" Type="tinyint" />
-          <Property Name="Determination" Type="tinyint" />
-          <Property Name="Decisions" Type="tinyint" />
-          <Property Name="Crossing" Type="tinyint" />
-          <Property Name="Corner_kick" Type="tinyint" />
-          <Property Name="Concentration" Type="tinyint" />
-          <Property Name="Composure" Type="tinyint" />
-          <Property Name="Communication" Type="tinyint" />
-          <Property Name="Command_of_area" Type="tinyint" />
-          <Property Name="Bravery" Type="tinyint" />
-          <Property Name="Balance" Type="tinyint" />
-          <Property Name="Anticipation" Type="tinyint" />
-          <Property Name="Agility" Type="tinyint" />
-          <Property Name="Aggression" Type="tinyint" />
-          <Property Name="Aerial" Type="tinyint" />
-          <Property Name="Value" Type="varchar" MaxLength="10" />
-          <Property Name="Position" Type="varchar" MaxLength="10" />
-          <Property Name="Age" Type="tinyint" />
-          <Property Name="Hight" Type="int" />
-          <Property Name="Weight" Type="tinyint" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Nationality" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FK_Club" Type="int" Nullable="false" />
+          <Property Name="Acceleration" Type="tinyint" Nullable="false" />
+          <Property Name="Workrate" Type="tinyint" Nullable="false" />
+          <Property Name="Vision" Type="tinyint" Nullable="false" />
+          <Property Name="Thowing" Type="tinyint" Nullable="false" />
+          <Property Name="Tendency_to_punch_ball" Type="tinyint" Nullable="false" />
+          <Property Name="Technique" Type="tinyint" Nullable="false" />
+          <Property Name="Teamwork" Type="tinyint" Nullable="false" />
+          <Property Name="Tackling" Type="tinyint" Nullable="false" />
+          <Property Name="Strentgh" Type="tinyint" Nullable="false" />
+          <Property Name="Stamina" Type="tinyint" Nullable="false" />
+          <Property Name="Rushing_out" Type="tinyint" Nullable="false" />
+          <Property Name="Reflexes" Type="tinyint" Nullable="false" />
+          <Property Name="Positioning" Type="tinyint" Nullable="false" />
+          <Property Name="Pentalty_kick" Type="tinyint" Nullable="false" />
+          <Property Name="Passing" Type="tinyint" Nullable="false" />
+          <Property Name="Pace" Type="tinyint" Nullable="false" />
+          <Property Name="One_on_one" Type="tinyint" Nullable="false" />
+          <Property Name="Off_the_ball" Type="tinyint" Nullable="false" />
+          <Property Name="Natural_fitness" Type="tinyint" Nullable="false" />
+          <Property Name="Marking" Type="tinyint" Nullable="false" />
+          <Property Name="Long_throw" Type="tinyint" Nullable="false" />
+          <Property Name="Longshot" Type="tinyint" Nullable="false" />
+          <Property Name="Leadership" Type="tinyint" Nullable="false" />
+          <Property Name="Kicking" Type="tinyint" Nullable="false" />
+          <Property Name="Jumping" Type="tinyint" Nullable="false" />
+          <Property Name="Heading" Type="tinyint" Nullable="false" />
+          <Property Name="Handling" Type="tinyint" Nullable="false" />
+          <Property Name="Free_kick" Type="tinyint" Nullable="false" />
+          <Property Name="Flair" Type="tinyint" Nullable="false" />
+          <Property Name="First_touch" Type="tinyint" Nullable="false" />
+          <Property Name="Finishing" Type="tinyint" Nullable="false" />
+          <Property Name="Eccentricity" Type="tinyint" Nullable="false" />
+          <Property Name="Dribbling" Type="tinyint" Nullable="false" />
+          <Property Name="Determination" Type="tinyint" Nullable="false" />
+          <Property Name="Decisions" Type="tinyint" Nullable="false" />
+          <Property Name="Crossing" Type="tinyint" Nullable="false" />
+          <Property Name="Corner_kick" Type="tinyint" Nullable="false" />
+          <Property Name="Concentration" Type="tinyint" Nullable="false" />
+          <Property Name="Composure" Type="tinyint" Nullable="false" />
+          <Property Name="Communication" Type="tinyint" Nullable="false" />
+          <Property Name="Command_of_area" Type="tinyint" Nullable="false" />
+          <Property Name="Bravery" Type="tinyint" Nullable="false" />
+          <Property Name="Balance" Type="tinyint" Nullable="false" />
+          <Property Name="Anticipation" Type="tinyint" Nullable="false" />
+          <Property Name="Agility" Type="tinyint" Nullable="false" />
+          <Property Name="Aggression" Type="tinyint" Nullable="false" />
+          <Property Name="Aerial" Type="tinyint" Nullable="false" />
+          <Property Name="Value" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Position" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Age" Type="tinyint" Nullable="false" />
+          <Property Name="Hight" Type="int" Nullable="false" />
+          <Property Name="Weight" Type="tinyint" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -105,7 +105,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Players_Clubs">
-          <End Role="Clubs" Type="Self.Clubs" Multiplicity="0..1" />
+          <End Role="Clubs" Type="Self.Clubs" Multiplicity="1" />
           <End Role="Players" Type="Self.Players" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Clubs">
@@ -159,61 +159,61 @@
             <PropertyRef Name="ID_Player" />
           </Key>
           <Property Name="ID_Player" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="FK_Club" Type="Int32" />
-          <Property Name="Acceleration" Type="Byte" />
-          <Property Name="Workrate" Type="Byte" />
-          <Property Name="Vision" Type="Byte" />
-          <Property Name="Thowing" Type="Byte" />
-          <Property Name="Tendency_to_punch_ball" Type="Byte" />
-          <Property Name="Technique" Type="Byte" />
-          <Property Name="Teamwork" Type="Byte" />
-          <Property Name="Tackling" Type="Byte" />
-          <Property Name="Strentgh" Type="Byte" />
-          <Property Name="Stamina" Type="Byte" />
-          <Property Name="Rushing_out" Type="Byte" />
-          <Property Name="Reflexes" Type="Byte" />
-          <Property Name="Positioning" Type="Byte" />
-          <Property Name="Pentalty_kick" Type="Byte" />
-          <Property Name="Passing" Type="Byte" />
-          <Property Name="Pace" Type="Byte" />
-          <Property Name="One_on_one" Type="Byte" />
-          <Property Name="Off_the_ball" Type="Byte" />
-          <Property Name="Natural_fitness" Type="Byte" />
-          <Property Name="Marking" Type="Byte" />
-          <Property Name="Long_throw" Type="Byte" />
-          <Property Name="Longshot" Type="Byte" />
-          <Property Name="Leadership" Type="Byte" />
-          <Property Name="Kicking" Type="Byte" />
-          <Property Name="Jumping" Type="Byte" />
-          <Property Name="Heading" Type="Byte" />
-          <Property Name="Handling" Type="Byte" />
-          <Property Name="Free_kick" Type="Byte" />
-          <Property Name="Flair" Type="Byte" />
-          <Property Name="First_touch" Type="Byte" />
-          <Property Name="Finishing" Type="Byte" />
-          <Property Name="Eccentricity" Type="Byte" />
-          <Property Name="Dribbling" Type="Byte" />
-          <Property Name="Determination" Type="Byte" />
-          <Property Name="Decisions" Type="Byte" />
-          <Property Name="Crossing" Type="Byte" />
-          <Property Name="Corner_kick" Type="Byte" />
-          <Property Name="Concentration" Type="Byte" />
-          <Property Name="Composure" Type="Byte" />
-          <Property Name="Communication" Type="Byte" />
-          <Property Name="Command_of_area" Type="Byte" />
-          <Property Name="Bravery" Type="Byte" />
-          <Property Name="Balance" Type="Byte" />
-          <Property Name="Anticipation" Type="Byte" />
-          <Property Name="Agility" Type="Byte" />
-          <Property Name="Aggression" Type="Byte" />
-          <Property Name="Aerial" Type="Byte" />
-          <Property Name="Value" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="Position" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="Age" Type="Byte" />
-          <Property Name="Hight" Type="Int32" />
-          <Property Name="Weight" Type="Byte" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FK_Club" Type="Int32" Nullable="false" />
+          <Property Name="Acceleration" Type="Byte" Nullable="false" />
+          <Property Name="Workrate" Type="Byte" Nullable="false" />
+          <Property Name="Vision" Type="Byte" Nullable="false" />
+          <Property Name="Thowing" Type="Byte" Nullable="false" />
+          <Property Name="Tendency_to_punch_ball" Type="Byte" Nullable="false" />
+          <Property Name="Technique" Type="Byte" Nullable="false" />
+          <Property Name="Teamwork" Type="Byte" Nullable="false" />
+          <Property Name="Tackling" Type="Byte" Nullable="false" />
+          <Property Name="Strentgh" Type="Byte" Nullable="false" />
+          <Property Name="Stamina" Type="Byte" Nullable="false" />
+          <Property Name="Rushing_out" Type="Byte" Nullable="false" />
+          <Property Name="Reflexes" Type="Byte" Nullable="false" />
+          <Property Name="Positioning" Type="Byte" Nullable="false" />
+          <Property Name="Pentalty_kick" Type="Byte" Nullable="false" />
+          <Property Name="Passing" Type="Byte" Nullable="false" />
+          <Property Name="Pace" Type="Byte" Nullable="false" />
+          <Property Name="One_on_one" Type="Byte" Nullable="false" />
+          <Property Name="Off_the_ball" Type="Byte" Nullable="false" />
+          <Property Name="Natural_fitness" Type="Byte" Nullable="false" />
+          <Property Name="Marking" Type="Byte" Nullable="false" />
+          <Property Name="Long_throw" Type="Byte" Nullable="false" />
+          <Property Name="Longshot" Type="Byte" Nullable="false" />
+          <Property Name="Leadership" Type="Byte" Nullable="false" />
+          <Property Name="Kicking" Type="Byte" Nullable="false" />
+          <Property Name="Jumping" Type="Byte" Nullable="false" />
+          <Property Name="Heading" Type="Byte" Nullable="false" />
+          <Property Name="Handling" Type="Byte" Nullable="false" />
+          <Property Name="Free_kick" Type="Byte" Nullable="false" />
+          <Property Name="Flair" Type="Byte" Nullable="false" />
+          <Property Name="First_touch" Type="Byte" Nullable="false" />
+          <Property Name="Finishing" Type="Byte" Nullable="false" />
+          <Property Name="Eccentricity" Type="Byte" Nullable="false" />
+          <Property Name="Dribbling" Type="Byte" Nullable="false" />
+          <Property Name="Determination" Type="Byte" Nullable="false" />
+          <Property Name="Decisions" Type="Byte" Nullable="false" />
+          <Property Name="Crossing" Type="Byte" Nullable="false" />
+          <Property Name="Corner_kick" Type="Byte" Nullable="false" />
+          <Property Name="Concentration" Type="Byte" Nullable="false" />
+          <Property Name="Composure" Type="Byte" Nullable="false" />
+          <Property Name="Communication" Type="Byte" Nullable="false" />
+          <Property Name="Command_of_area" Type="Byte" Nullable="false" />
+          <Property Name="Bravery" Type="Byte" Nullable="false" />
+          <Property Name="Balance" Type="Byte" Nullable="false" />
+          <Property Name="Anticipation" Type="Byte" Nullable="false" />
+          <Property Name="Agility" Type="Byte" Nullable="false" />
+          <Property Name="Aggression" Type="Byte" Nullable="false" />
+          <Property Name="Aerial" Type="Byte" Nullable="false" />
+          <Property Name="Value" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Position" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Age" Type="Byte" Nullable="false" />
+          <Property Name="Hight" Type="Int32" Nullable="false" />
+          <Property Name="Weight" Type="Byte" Nullable="false" />
           <NavigationProperty Name="Clubs" Relationship="Self.FK_Players_Clubs" FromRole="Players" ToRole="Clubs" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -239,7 +239,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Players_Clubs">
-          <End Role="Clubs" Type="Self.Clubs" Multiplicity="0..1" />
+          <End Role="Clubs" Type="Self.Clubs" Multiplicity="1" />
           <End Role="Players" Type="Self.Players" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Clubs">
@@ -250,7 +250,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="FMDraftEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="FMDraftEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Clubs" EntityType="Self.Clubs" />
           <EntitySet Name="Divisions" EntityType="Self.Divisions" />
           <EntitySet Name="Players" EntityType="Self.Players" />
@@ -269,7 +269,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="FMDraftModelStoreContainer" CdmEntityContainer="FMDraftEntities">
+        <EntityContainerMapping StorageEntityContainer="FMDraftModelStoreContainer" CdmEntityContainer="FMDraftEntities1">
           <EntitySetMapping Name="Clubs">
             <EntityTypeMapping TypeName="FMDraftModel.Clubs">
               <MappingFragment StoreEntitySet="Clubs">

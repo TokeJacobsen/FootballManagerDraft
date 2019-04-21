@@ -8,6 +8,6 @@ namespace FmDraft.Models.Generator
 {
     interface PlayerFactory
     {
-        Player GetPlayer();
+        Player GetPlayer(Players player);
     }
 }

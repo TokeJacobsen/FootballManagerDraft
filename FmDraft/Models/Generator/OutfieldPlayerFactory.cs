@@ -7,14 +7,14 @@ namespace FmDraft.Models.Generator
 {
     public class OutfieldPlayerFactory : PlayerFactory
     {
-        FMDraftEntities db;
-        public OutfieldPlayerFactory (FMDraftEntities db)
+        FMDraftEntities1 db;
+        public OutfieldPlayerFactory (FMDraftEntities1 db)
         {
             this.db = db;
         }
-        public Player GetPlayer()
+        public Player GetPlayer(Players player)
         {
-            throw new NotImplementedException();
+           throw new NotImplementedException();
         }
     }
 }
