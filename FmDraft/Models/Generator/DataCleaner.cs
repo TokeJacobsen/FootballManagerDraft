@@ -11,19 +11,15 @@ namespace FmDraft.Models.Generator
         public static double ConvertValueToNumber(string value)
         {
             double price = 0;
-            Regex regex = new Regex(@"\d*\.?\d*");
             if (value.EndsWith("K"))
             {
-                var tempValue = regex.Match(value).Value;
-
-                System.Diagnostics.Debug.WriteLine(tempValue + " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" );
-
-                price = Convert.ToDouble(tempValue) * 1000;
+                value = value.Replace("K", "").Replace("£", "");
+                price = Convert.ToDouble(value) * 1000;
             }
             else if (value.EndsWith("M"))
             {
-                var tempValue = regex.Match(value).Value;
-                price = Convert.ToDouble(tempValue) * 1000000;
+                value = value.Replace("M", "").Replace("£", "");
+                price = Convert.ToDouble(value) * 1000000;
             }
 
             return price;

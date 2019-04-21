@@ -8,8 +8,6 @@ namespace FmDraft.Models.Generator
     public class PlayerPoolFactory
     {
         private List<string> divisions;
-        PlayerFactory goalkeeperFactory;
-        PlayerFactory outfieldPlayerFactory;
         List<Player> playerPool;
         public PlayerPoolFactory(List<string> divisions)
         {
@@ -17,12 +15,11 @@ namespace FmDraft.Models.Generator
             this.divisions = divisions;
 
         }
-        public List<Players> GetPlayerPool()
+        public List<Player> GetPlayerPool()
         {
+            PlayerFactory factory;
             using(var db = new FMDraftEntities1())
             {
-                goalkeeperFactory = new GoalkeeperFactory(db);
-                outfieldPlayerFactory = new OutfieldPlayerFactory(db);
                 foreach (string division in divisions)
                 {
                     var players = from p in db.Players
@@ -32,7 +29,14 @@ namespace FmDraft.Models.Generator
                     {
                         if (player.Position.Equals("GK"))
                         {
-                            playerPool.Add(goalkeeperFactory.GetPlayer(player));
+                            factory = GoalkeeperFactory.GetInstance();
+                            playerPool.Add(factory.GetPlayer(player));
+                        }
+                        else
+                        {
+                            factory = OutfieldPlayerFactory.GetInstance();
+                            playerPool.Add(factory.GetPlayer(player));
+
                         }
 
                     }
@@ -40,7 +44,7 @@ namespace FmDraft.Models.Generator
 
                 }
             }
-            return null;
+            return playerPool;
         }
 
     }

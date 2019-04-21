@@ -159,6 +159,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Drafter.cs" />
     <Compile Include="Models\Generator\DataCleaner.cs" />
     <Compile Include="Models\Generator\GoalkeeperFactory.cs" />
     <Compile Include="Models\Generator\OutfieldPlayerFactory.cs" />

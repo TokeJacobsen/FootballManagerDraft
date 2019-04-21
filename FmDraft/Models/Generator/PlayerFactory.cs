@@ -9,6 +9,7 @@ namespace FmDraft.Models.Generator
     interface PlayerFactory
     {
         Player GetPlayer(Players player);
+
     }
 
 
