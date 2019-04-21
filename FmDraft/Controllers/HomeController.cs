@@ -11,6 +11,9 @@ namespace FmDraft.Controllers
     {
         public ActionResult Index()
         {
+            Formations formations = new Formations();
+            Dictionary<string, Formation> formationDictionary = formations.GetFormations();
+            ViewData["Formations"] = formationDictionary;
 
             return View();
         }
