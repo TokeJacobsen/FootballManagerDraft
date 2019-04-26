@@ -1,63 +1,49 @@
-﻿@{
+﻿@model FmDraft.Models.InitViewModel
 
-    ViewBag.Title = "Home Page";
-
-
+@{
+    ViewBag.Title = "Initialization";
 }
 
-<div style="text-align: center">
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Player 1</h2>
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Players name</label> mode
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Type name">
-            </div>
-            <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                        Formations
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu drop2">
-                    @{
-                        var data = (Dictionary<string, FmDraft.Models.Init.Formation>)ViewData["Formations"];
-                        foreach (var d in data)
-                        {
-                            <li><a href="#">@d.Key</a></li>
-                        }
-                    }
-                </ul>
+<h2>Initialization</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>InitViewModel</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.PlayerOne, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PlayerOne, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PlayerOne, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(model => model.FormationP1, Model.FormationListItemsP1,"Choose formation");
             </div>
         </div>
 
-        <div class="col-md-4">
-            <h2>Settings</h2>
-
+        <div class="form-group">
+            @Html.LabelFor(model => model.PlayerTwo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PlayerTwo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PlayerTwo, "", new { @class = "text-danger" })
+            </div>
         </div>
 
-        <div class="col-md-4">
-            <h2>Player 2</h2>
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Players name</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Type name">
-            </div>
-            <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                    Formations
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu drop2">
-                    @{
-                        foreach (var d in data)
-                        {
-                            <li><a href="#">@d.Key</a></li>
-                        }
-                    }
-                </ul>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>
+}
 
-    <p><a class="btn-lg btn-success">Let's go!</a></p>
-
+<div>
+    @Html.ActionLink("Back to List", "Index")
 </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

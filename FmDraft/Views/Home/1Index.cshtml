@@ -1,0 +1,63 @@
+﻿@{
+
+    ViewBag.Title = "Home Page";
+
+
+}
+
+<div style="text-align: center">
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Player 1</h2>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Players name</label> mode
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Type name">
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                        Formations
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu drop2">
+                    @{
+                        var data = (Dictionary<string, FmDraft.Models.Init.Formation>)ViewData["Formations"];
+                        foreach (var d in data)
+                        {
+                            <li><a href="#">@d.Key</a></li>
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <h2>Settings</h2>
+
+        </div>
+
+        <div class="col-md-4">
+            <h2>Player 2</h2>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Players name</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Type name">
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                    Formations
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu drop2">
+                    @{
+                        foreach (var d in data)
+                        {
+                            <li><a href="#">@d.Key</a></li>
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <p><a class="btn-lg btn-success">Let's go!</a></p>
+
+</div>

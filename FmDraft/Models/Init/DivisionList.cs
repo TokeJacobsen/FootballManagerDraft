@@ -8,12 +8,9 @@ namespace FmDraft.Models.Init
 {
     public class DivisionList
     {
-        public DivisionList()
-        {
 
-        }
 
-        public List<Division> GetDivisionList()
+        public static List<Division> GetDivisionList()
         {
             List<Division> divisions = new List<Division>();
             using (FMDraftEntities1 db = new FMDraftEntities1())

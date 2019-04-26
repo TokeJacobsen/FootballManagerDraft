@@ -165,15 +165,16 @@
     <Compile Include="Models\Generator\OutfieldPlayerFactory.cs" />
     <Compile Include="Models\Generator\PlayerFactory.cs" />
     <Compile Include="Models\Generator\PlayerPoolFactory.cs" />
+    <Compile Include="Models\ViewModel\InitViewModel.cs" />
     <Compile Include="Models\Init\DivisionList.cs" />
     <Compile Include="Models\Init\Formations.cs" />
     <Compile Include="Models\Init\Formation.cs" />
     <Compile Include="Models\Init\User.cs" />
-    <Compile Include="Models\ViewModels\Club.cs" />
-    <Compile Include="Models\ViewModels\Division.cs" />
-    <Compile Include="Models\ViewModels\Goalkeeper.cs" />
-    <Compile Include="Models\ViewModels\OutfieldPlayer.cs" />
-    <Compile Include="Models\ViewModels\Player.cs" />
+    <Compile Include="Models\DataModel\Club.cs" />
+    <Compile Include="Models\DataModel\Division.cs" />
+    <Compile Include="Models\DataModel\Goalkeeper.cs" />
+    <Compile Include="Models\DataModel\OutfieldPlayer.cs" />
+    <Compile Include="Models\DataModel\Player.cs" />
     <Compile Include="Players.cs">
       <DependentUpon>DbContext.tt</DependentUpon>
     </Compile>
@@ -234,6 +235,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\1Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>

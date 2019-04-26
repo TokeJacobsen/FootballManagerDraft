@@ -17,12 +17,9 @@ namespace FmDraft.Controllers
 
             User player1 = new User();
             User player2 = new User();
-            ViewData["player1"] = player1;
-            ViewData["player2"] = player2;
 
-
-
-            return View();
+            InitViewModel model = new InitViewModel();
+            return View(model);
         }
 
         public ActionResult About()
