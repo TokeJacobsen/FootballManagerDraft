@@ -15,6 +15,9 @@ namespace FmDraft.Models
         List<Division> divisions;
         public List<SelectListItem> formationListItems;
         public List<SelectListItem> divisionListItems;
+
+        [DisplayName("Division")]
+        public string Division { get; set; }
         public InitViewModel()
         {
             
