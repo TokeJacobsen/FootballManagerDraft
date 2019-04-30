@@ -9,7 +9,16 @@ namespace FmDraft.Models.Init
     {
         public string Name { get; set; }
         public Formation Formation { get; set; }
-        public string FormationTitle { get; set; }
+        List<Player> players = new List<Player>();
+
+        public void PickPlayer(Player player)
+        {
+            players.Add(player);
+        }
+        public int SquadSize()
+        {
+            return players.Count;
+        }
 
     }
 }

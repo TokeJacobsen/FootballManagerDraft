@@ -8,8 +8,7 @@ namespace FmDraft.Models.Init
 {
     public class DivisionList
     {
-
-
+    
         public static List<Division> GetDivisionList()
         {
             List<Division> divisions = new List<Division>();
