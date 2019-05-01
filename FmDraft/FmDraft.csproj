@@ -138,6 +138,7 @@
       <DependentUpon>DbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PickingController.cs" />
     <Compile Include="DbContext.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -165,6 +166,7 @@
     <Compile Include="Models\Generator\OutfieldPlayerFactory.cs" />
     <Compile Include="Models\Generator\PlayerFactory.cs" />
     <Compile Include="Models\Generator\PlayerPoolFactory.cs" />
+    <Compile Include="Models\Init\GameSettings.cs" />
     <Compile Include="Models\ViewModel\InitViewModel.cs" />
     <Compile Include="Models\Init\DivisionList.cs" />
     <Compile Include="Models\Init\Formations.cs" />
@@ -175,6 +177,7 @@
     <Compile Include="Models\DataModel\Goalkeeper.cs" />
     <Compile Include="Models\DataModel\OutfieldPlayer.cs" />
     <Compile Include="Models\DataModel\Player.cs" />
+    <Compile Include="Models\ViewModel\PickingViewModel.cs" />
     <Compile Include="Players.cs">
       <DependentUpon>DbContext.tt</DependentUpon>
     </Compile>
@@ -233,10 +236,8 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\1Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Picking\Picking.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

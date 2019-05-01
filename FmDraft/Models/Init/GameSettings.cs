@@ -12,6 +12,7 @@ namespace FmDraft.Models.Init
         public User Player2 { get; set; }
 
         List<Player> playerPool;
+        
 
         public List<Player> GetPlayerPool()
         {
@@ -22,6 +23,21 @@ namespace FmDraft.Models.Init
         {
             PlayerPoolFactory factory = new PlayerPoolFactory(divisionList);
             playerPool = factory.GetPlayerPool();
+        }
+
+        public bool InitializeGame(InitViewModel inputData)
+        {
+            System.Diagnostics.Debug.WriteLine(inputData.FormationP1);
+            System.Diagnostics.Debug.WriteLine(inputData.FormationP1);
+            System.Diagnostics.Debug.WriteLine(inputData.FormationP2);
+            System.Diagnostics.Debug.WriteLine(inputData.PlayerOne);
+            System.Diagnostics.Debug.WriteLine(inputData.PlayerTwo);
+            System.Diagnostics.Debug.WriteLine(inputData.Division);
+            System.Diagnostics.Debug.WriteLine(inputData.divisionListItems);
+
+            return true;
+
+
         }
 
         

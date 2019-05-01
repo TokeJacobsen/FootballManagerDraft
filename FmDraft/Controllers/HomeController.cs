@@ -9,31 +9,20 @@ namespace FmDraft.Controllers
 {
     public class HomeController : Controller
     {
+        GameSettings settings = new GameSettings();
+
         public ActionResult Index()
         {
-            Formations formations = new Formations();
-            Dictionary<string, Formation> formationDictionary = formations.GetFormations();
-            ViewData["Formations"] = formationDictionary;
-
-            User player1 = new User();
-            User player2 = new User();
-
             InitViewModel model = new InitViewModel();
             return View(model);
         }
 
-        public ActionResult About()
+        [HttpPost]
+        public ActionResult CreateGame(InitViewModel inputData)
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            settings.InitializeGame(inputData);
+            return RedirectToAction("Picking", "Picking"); 
         }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
     }
 }
