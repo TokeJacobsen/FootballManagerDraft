@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace FmDraft.Controllers
 {
-    public class PickingController : Controller
+    public class DraftController : Controller
     {
-        public ActionResult Picking()
+        public ActionResult New()
         {
             return View();
         }

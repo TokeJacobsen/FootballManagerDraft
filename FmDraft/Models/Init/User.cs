@@ -8,7 +8,8 @@ namespace FmDraft.Models.Init
     public class User
     {
         public string Name { get; set; }
-        public Formation Formation { get; set; }
+        public Formation Formation { get { return formation; } set { formation = value; } }
+        Formation formation;
         List<Player> players = new List<Player>();
 
         public void PickPlayer(Player player)

@@ -24,19 +24,12 @@ namespace FmDraft.Controllers
         public ActionResult CreateGame(InitViewModel inputData)
         {
 
-            Debug.WriteLine(inputData.Division + "1" );
+            if (settings.InitializeGame(inputData))
+            {
+                return RedirectToAction("New", "Draft");
+            }
 
-            Debug.WriteLine(inputData.FormationP1 + "2");
-
-            Debug.WriteLine(inputData.FormationP2 + "3");
-
-            Debug.WriteLine(inputData.PlayerOne + "4");
-
-
-            Debug.WriteLine(inputData.PlayerTwo + "5");
-
-            settings.InitializeGame(inputData);
-            return RedirectToAction("Picking", "Picking"); 
+            return RedirectToAction("Index");
         }
 
     }

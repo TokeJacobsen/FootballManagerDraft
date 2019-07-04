@@ -36,16 +36,11 @@ namespace FmDraft.Models.Generator
                         {
                             factory = OutfieldPlayerFactory.GetInstance();
                             playerPool.Add(factory.GetPlayer(player));
-
                         }
-
                     }
-
-
                 }
             }
             return playerPool;
         }
-
     }
 }

@@ -12,15 +12,25 @@ namespace FmDraft.Models
     public class InitViewModel
     {
         Dictionary<string, Formation> formationsDictionary;
-        List<Division> divisions;
         public List<SelectListItem> formationListItems;
         public List<SelectListItem> divisionListItems;
+        List<String> chosenDivisions;
 
         [DisplayName("Division")]
-        public string Division { get; set; }
+        public List<String> ChosenDivisions
+        {
+            get { return chosenDivisions; }
+            set { chosenDivisions = value; }
+        }
+        public Dictionary<string, Formation> FormationsDictionary
+        {
+            get { return formationsDictionary; }
+            set { formationsDictionary = value; }
+        }
+
+
         public InitViewModel()
         {
-            
           Formations formations = new Formations();
           formationsDictionary = formations.GetFormations();
           formationListItems = new List<SelectListItem>();
@@ -29,8 +39,7 @@ namespace FmDraft.Models
                 formationListItems.Add(new SelectListItem { Text = key, Value = key });
           }
 
-
-          divisions = DivisionList.GetDivisionList();
+          List<Division> divisions = DivisionList.GetDivisionList();
           divisionListItems = new List<SelectListItem>();
           foreach (Division div in divisions)
           {
