@@ -101,9 +101,5 @@ namespace FmDraft.Models.Init
             return true;
         }
 
-        public void PickP1()
-        {
-            Debug.WriteLine("!!!!!!!");
-        }
     }
 }

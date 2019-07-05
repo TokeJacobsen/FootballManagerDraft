@@ -13,7 +13,7 @@ namespace FmDraft.Models
             this.pool = players;
         }
 
-        public void Shuffle(List<Player> list)
+        private void Shuffle(List<Player> list)
         {
             Random rng = new Random();
             int n = list.Count;

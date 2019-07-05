@@ -1,4 +1,5 @@
-﻿using FmDraft.Models.Init;
+﻿using FmDraft.Models;
+using FmDraft.Models.Init;
 using FmDraft.Models.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -11,21 +12,22 @@ namespace FmDraft.Controllers
 {
     public class DraftController : Controller
     {
+        Drafter drafter = new Drafter(GameSettings.Instance.GetPlayerPool());
         public ActionResult New()
         {
             DraftViewModel model = new DraftViewModel();
             return View(model);
         }
         
-        public ActionResult PickP1()
+        public JsonResult PickP1(string position)
         {
-            Debug.WriteLine("JAAAAAA");
-            return View();
+            return Json(drafter.GetFive(position), JsonRequestBehavior.AllowGet);
         }
 
-        public void PickP2()
+        public string PickP2(string position)
         {
-            Debug.WriteLine("WUUU!");
+            GameSettings.Instance.Round = GameSettings.Instance.Round+1;
+            return drafter.GetFive(position)[0].Name;
 
         }
     }

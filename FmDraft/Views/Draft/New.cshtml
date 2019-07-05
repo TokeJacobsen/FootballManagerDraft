@@ -4,6 +4,7 @@
     ViewBag.Title = "New draft";
 
 }
+<script src="~/Scripts/script.js"></script>
 
 <h2>Draft</h2>
 
@@ -12,11 +13,19 @@
     <div class="flex-containerP1">
         <h1>@Model.GameSettings.Player1.Name</h1>
         <h2>@Model.GameSettings.Player1.Formation.FormationTitle</h2>
+
+        @{
+            var i = 1;
+        }
         @foreach (var item in Model.GameSettings.Player1.Formation.FormationArray)
         {
-            <button type="button" class="Player Player1" disabled="@(Model.GameSettings.Round%2==0)"
-                    onclick="location.href='@Url.Action("PickP1", "Draft")'">P1 @item</button>
-    }
+
+            <button id="@i" type="button" class="Player Player1" disabled="@(Model.GameSettings.Round%2==0)">
+                @item
+            </button>
+
+            i++;
+        }
     </div>
 
 
@@ -25,8 +34,35 @@
         <h2>@Model.GameSettings.Player2.Formation.FormationTitle</h2>
         @foreach (var item in Model.GameSettings.Player2.Formation.FormationArray)
         {
-            <button type="button" class="Player Player2" disabled="@(Model.GameSettings.Round%2!=0)" 
-                    onclick="location.href='@Url.Action("PickP2", "Draft")'">P2 @item</button>
+            <button id="@i" type="button" class="Player Player2" disabled="@(Model.GameSettings.Round%2!=0)"
+                    onclick="myfunction('@item', @i)">
+                @item
+            </button>
+
+            i++;
         }
     </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <p>Some text in the modal.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
 </div>
