@@ -1,19 +1,32 @@
-﻿@model FmDraft.Models.ViewModel.PickingViewModel
+﻿@model FmDraft.Models.ViewModel.DraftViewModel
 
 @{
-    ViewBag.Title = "Picking";
+    ViewBag.Title = "New draft";
+
 }
 
-<h2>Picking</h2>
+<h2>Draft</h2>
 
-<div class="btn-group col-sm-4">
-    <button>Apple</button>
-    <button>Samsung</button>
-    <button>Sony</button>
-</div>
+<div class="flex-containerMain">
 
-<div class="btn-group col-sm-4">
-    <button>Apple</button>
-    <button>Samsung</button>
-    <button>Sony</button>
+    <div class="flex-containerP1">
+        <h1>@Model.GameSettings.Player1.Name</h1>
+        <h2>@Model.GameSettings.Player1.Formation.FormationTitle</h2>
+        @foreach (var item in Model.GameSettings.Player1.Formation.FormationArray)
+        {
+            <button type="button" class="Player Player1" disabled="@(Model.GameSettings.Round%2==0)"
+                    onclick="location.href='@Url.Action("PickP1", "Draft")'">P1 @item</button>
+    }
+    </div>
+
+
+    <div class="flex-containerP2">
+        <h1>@Model.GameSettings.Player2.Name</h1>
+        <h2>@Model.GameSettings.Player2.Formation.FormationTitle</h2>
+        @foreach (var item in Model.GameSettings.Player2.Formation.FormationArray)
+        {
+            <button type="button" class="Player Player2" disabled="@(Model.GameSettings.Round%2!=0)" 
+                    onclick="location.href='@Url.Action("PickP2", "Draft")'">P2 @item</button>
+        }
+    </div>
 </div>

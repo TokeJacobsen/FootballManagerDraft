@@ -9,6 +9,30 @@ namespace FmDraft.Models.Init
 {
     public class GameSettings
     {
+        int round = 1;
+        public int Round { get { return round; } set {round = value ;} }
+        private static GameSettings instance = null;
+        private static readonly object padlock = new object();
+        private GameSettings()
+        {
+
+        }
+        public static GameSettings Instance
+        {
+            get
+            {
+                lock (padlock)
+                {
+                    if (instance == null)
+                    {
+                        instance = new GameSettings();
+                    }
+                    return instance;
+                }
+            }
+        }
+    
+
         public User Player1 { get; set; }
         public User Player2 { get; set; }
 
@@ -77,10 +101,9 @@ namespace FmDraft.Models.Init
             return true;
         }
 
-        
-
-
-              
-
+        public void PickP1()
+        {
+            Debug.WriteLine("!!!!!!!");
+        }
     }
 }

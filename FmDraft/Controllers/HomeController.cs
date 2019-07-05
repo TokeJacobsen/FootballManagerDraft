@@ -6,12 +6,13 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Web.Mvc;
+using System.Web.Routing;
 
 namespace FmDraft.Controllers
 {
     public class HomeController : Controller
     {
-        GameSettings settings = new GameSettings();
+        
 
         public ActionResult Index()
         {
@@ -23,9 +24,11 @@ namespace FmDraft.Controllers
         [HttpPost]
         public ActionResult CreateGame(InitViewModel inputData)
         {
+            
 
-            if (settings.InitializeGame(inputData))
+            if (GameSettings.Instance.InitializeGame(inputData))
             {
+
                 return RedirectToAction("New", "Draft");
             }
 

@@ -177,7 +177,7 @@
     <Compile Include="Models\DataModel\Goalkeeper.cs" />
     <Compile Include="Models\DataModel\OutfieldPlayer.cs" />
     <Compile Include="Models\DataModel\Player.cs" />
-    <Compile Include="Models\ViewModel\PickingViewModel.cs" />
+    <Compile Include="Models\ViewModel\DraftViewModel.cs" />
     <Compile Include="Players.cs">
       <DependentUpon>DbContext.tt</DependentUpon>
     </Compile>
@@ -191,6 +191,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Style.css" />
     <Content Include="DbContext.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DbContext.edmx</DependentUpon>
