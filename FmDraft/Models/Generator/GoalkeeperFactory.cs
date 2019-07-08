@@ -26,6 +26,7 @@ namespace FmDraft.Models.Generator
         public Player GetPlayer(Players player)
         {
             Goalkeeper newPlayer = new Goalkeeper();
+            newPlayer.Id = player.ID_Player;
             newPlayer.Acceleration = player.Acceleration;
             newPlayer.Aerial = player.Aerial;
             newPlayer.Age = player.Age;
@@ -67,6 +68,7 @@ namespace FmDraft.Models.Generator
             newPlayer.Position = player.Position;
             newPlayer.Positioning = player.Positioning;
             newPlayer.Reflexes = player.Reflexes;
+            newPlayer.Flair = player.Flair;
             newPlayer.RushingOut = player.Rushing_out;
             newPlayer.Stamina = player.Stamina;
             newPlayer.Strength = player.Strentgh;

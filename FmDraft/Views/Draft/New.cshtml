@@ -20,7 +20,7 @@
         @foreach (var item in Model.GameSettings.Player1.Formation.FormationArray)
         {
 
-            <button id="@i" type="button" class="Player Player1" disabled="@(Model.GameSettings.Round%2==0)">
+            <button id="@i" type="button" class="Player Player1">
                 @item
             </button>
 
@@ -34,8 +34,7 @@
         <h2>@Model.GameSettings.Player2.Formation.FormationTitle</h2>
         @foreach (var item in Model.GameSettings.Player2.Formation.FormationArray)
         {
-            <button id="@i" type="button" class="Player Player2" disabled="@(Model.GameSettings.Round%2!=0)"
-                    onclick="myfunction('@item', @i)">
+            <button id="@i" type="button" class="Player Player2">
                 @item
             </button>
 
@@ -44,25 +43,10 @@
     </div>
 </div>
 
+
+
+
 <!-- Modal -->
 <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Modal Header</h4>
-            </div>
-            <div class="modal-body">
-                <p>Some text in the modal.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-
-    </div>
-</div>
-
+        <div id="choiceList"></div>
 </div>

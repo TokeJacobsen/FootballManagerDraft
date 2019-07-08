@@ -29,11 +29,15 @@ namespace FmDraft.Models
 
         public List<Player> GetFive(string position)
         {
-            System.Diagnostics.Debug.WriteLine(pool.Count);
+            System.Diagnostics.Debug.WriteLine("Samlet pool:" + pool.Count);
+            System.Diagnostics.Debug.WriteLine("Position: "+position.Trim());
 
-            List<Player> players = pool.FindAll(p => p.Position.Equals(position));
+            List<Player> players = pool.FindAll(p => p.Position.Equals(position.Trim()));
+            System.Diagnostics.Debug.WriteLine("players with position:" +  players.Count);
+
             if (players.Count < 5)
             {
+
                 int playerDeficit = 5 - players.Count;
                 Shuffle(pool);
                 players.AddRange(pool.Take(playerDeficit));

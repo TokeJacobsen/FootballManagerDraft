@@ -25,6 +25,7 @@ namespace FmDraft.Models.Generator
         public Player GetPlayer(Players player)
         {
             OutfieldPlayer newPlayer = new OutfieldPlayer();
+            newPlayer.Id = player.ID_Player;
             newPlayer.CornerKick = player.Corner_kick;
             newPlayer.Crossing = player.Crossing;
             newPlayer.Dribbling = player.Dribbling;
@@ -77,6 +78,8 @@ namespace FmDraft.Models.Generator
             newPlayer.Vision = player.Vision;
             newPlayer.Weight = player.Weight;
             newPlayer.Workrate = player.Workrate;
+            newPlayer.Flair = player.Flair;
+
             return newPlayer;
         }
     }
