@@ -1,42 +1,22 @@
-﻿function getPlayers(position, id) {
-
-    
-    $.post("/draft/PickP1", { position: position }, function (data) {
-        $("#" + id).prop("disabled", true);
-        alert(data[0].Name)
-        return data;
-    });
-
-
-}
-
-
-window.onload = function () {
+﻿
+window.onload = function ()     {
 
     
 
     $('.Player1').click(function (event) {
         $("#myModal").modal();
-
-        $.post("/draft/PickP1", { position: event.target.innerHTML }, function (data) {
-            $("#" + event.target.id).prop("disabled", true);
+        $.post("/draft/PickP1", { position: event.currentTarget.innerHTML }, function (data) {
+            $("#" + event.currentTarget.id).prop("disabled", true);
             let counter = 0;
-            console.log(JSON.stringify(data));
-      //      $("#choice0").html(createPlayer(data[0]))
-       //     $("#choice1").html(createPlayer(data[1]))
-        //    $("#choice2").html(createPlayer(data[2]))
-         //   $("#choice3").html(createPlayer(data[3]))
-         //   $("#choice4").html(createPlayer(data[4]))
-
             let choiceInterval = setInterval(function () {
-                //   $("#choice" + counter).show("slow");
-                $("#choice" + counter).val('{ "playerId" : ' + data[counter].Id +', "positionId" : "test" }');
+
+                $("#choice" + counter).val('{ "playerId" : ' + data[counter].Id + ', "positionId" : "' + "#" + event.currentTarget.id + '", "name":"' + data[counter].Name + '", "club":"' + data[counter].Club.Name + '" }');
                 $("#choice" + counter).html(createPlayer(data[counter]))
-                    counter++;
-                 if (counter == 5) {
+                counter++;
+                if (counter == 5) {
                      clearInterval(choiceInterval)
-           }
-        }, 2000);
+                }
+            }, 2000);
 
         });
 
@@ -44,13 +24,15 @@ window.onload = function () {
 
 
     $('.choice').click(function (event) {
-        alert(event.currentTarget.id + "?")
-        let playerId = $("#" + event.currentTarget.id).val();
-       // alert($("#" + event.currentTarget.id).val())
-        let test = JSON.parse($("#" + event.currentTarget.id).val())
-        alert(test.positionId)
+        let buttonValue = JSON.parse($("#" + event.currentTarget.id).val())
+        $(buttonValue.positionId).html("<p>" + buttonValue.name + "</p><p>" + buttonValue.club + "</p>")
         $(".choice").html("<br><br><br><br><br><br>");
-       // $("#" + event.target.id).
+
+        if (buttonValue.positionId != undefined) {
+            $('#myModal').modal('hide');
+            $(".choice").val("");
+
+        }
     });
 
 
