@@ -45,13 +45,11 @@ namespace FmDraft.Models
             }
             Shuffle(players);
             players = players.Take(5).ToList();
-            System.Diagnostics.Debug.WriteLine(players.Count +"!");
 
 
             foreach (Player p in players)
-                System.Diagnostics.Debug.WriteLine(p.Name + " " + p.Club.Name + " " + p.Position);
+                System.Diagnostics.Debug.WriteLine(p.Name + " " + p.Club.Name + " " + p.Position + " " + p.Id);
 
-            pool.Remove(players.First());
 
             return players;
 

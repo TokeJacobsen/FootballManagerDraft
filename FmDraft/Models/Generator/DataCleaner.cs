@@ -18,8 +18,16 @@ namespace FmDraft.Models.Generator
             }
             else if (value.EndsWith("M"))
             {
-                value = value.Replace("M", "").Replace("£", "");
-                price = Convert.ToDouble(value) * 1000000;
+                if (value.Contains("."))
+                {
+                    value = value.Replace("M", "").Replace("£", "");
+                    price = Convert.ToDouble(value) * 100000;
+                }
+                else
+                {
+                    value = value.Replace("M", "").Replace("£", "");
+                    price = Convert.ToDouble(value) * 1000000;
+                }
             }
 
             return price;
