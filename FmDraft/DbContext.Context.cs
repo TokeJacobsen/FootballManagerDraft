@@ -29,5 +29,7 @@ namespace FmDraft
         public virtual DbSet<Divisions> Divisions { get; set; }
         public virtual DbSet<Players> Players { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<Formations> Formations { get; set; }
+        public virtual DbSet<Players_Copy_Virker> Players_Copy_Virker { get; set; }
     }
 }

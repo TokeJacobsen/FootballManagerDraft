@@ -157,6 +157,9 @@
     <Compile Include="Divisions.cs">
       <DependentUpon>DbContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Formations.cs">
+      <DependentUpon>DbContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -168,8 +171,8 @@
     <Compile Include="Models\Generator\PlayerPoolFactory.cs" />
     <Compile Include="Models\Init\GameSettings.cs" />
     <Compile Include="Models\ViewModel\InitViewModel.cs" />
-    <Compile Include="Models\Init\DivisionList.cs" />
-    <Compile Include="Models\Init\Formations.cs" />
+    <Compile Include="Models\DAO\DivisionList.cs" />
+    <Compile Include="Models\DAO\FormationsList.cs" />
     <Compile Include="Models\Init\Formation.cs" />
     <Compile Include="Models\Init\User.cs" />
     <Compile Include="Models\DataModel\Club.cs" />
@@ -179,6 +182,9 @@
     <Compile Include="Models\DataModel\Player.cs" />
     <Compile Include="Models\ViewModel\DraftViewModel.cs" />
     <Compile Include="Players.cs">
+      <DependentUpon>DbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Players_Copy_Virker.cs">
       <DependentUpon>DbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

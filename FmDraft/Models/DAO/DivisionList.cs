@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace FmDraft.Models.Init
+namespace FmDraft.Models.DAO
 {
     public class DivisionList
     {

@@ -12,23 +12,32 @@ namespace FmDraft.Controllers
 {
     public class DraftController : Controller
     {
-        Drafter drafter = new Drafter(GameSettings.Instance.GetPlayerPool());
+        Drafter drafter = GameSettings.Instance.GetDrafter();
         public ActionResult New()
         {
             DraftViewModel model = new DraftViewModel();
             return View(model);
         }
         
-        public JsonResult PickP1(string position)
+        public JsonResult GetFive(string position)
         {
             return Json(drafter.GetFive(position), JsonRequestBehavior.AllowGet);
         }
 
-        public string PickP2(string position)
+        public HttpStatusCodeResult Select(string playerId, int activePlayerId)
         {
-            GameSettings.Instance.Round = GameSettings.Instance.Round+1;
-            return drafter.GetFive(position)[0].Name;
+            User user = null;
+            if (activePlayerId == 1)
+            {
 
+                user = GameSettings.Instance.Player1;
+            }
+            else
+            {
+                user = GameSettings.Instance.Player2;
+            }
+            user.PickPlayer(drafter.FindByIdAndPick(playerId));
+            return new HttpStatusCodeResult(200);
         }
     }
 }

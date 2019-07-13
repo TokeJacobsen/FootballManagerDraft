@@ -10,39 +10,72 @@
 
 <div class="flex-containerMain">
 
-    <div class="flex-containerP1">
-        <h1>@Model.GameSettings.Player1.Name</h1>
-        <h2>@Model.GameSettings.Player1.Formation.FormationTitle</h2>
+    <div class="flex-containerStartAndSub">
 
-        @{
-            var i = 1;
-        }
-        @foreach (var item in Model.GameSettings.Player1.Formation.FormationArray)
-        {
+        <div class="flex-containerP1">
 
-        <button id="@i" type="button" class="Player Player1">
-            @item
-        </button>
+            @{
+                var i = 1;
+            }
 
-            i++;
-        }
+            <h1>@Model.GameSettings.Player1.Name</h1>
+            <h3 style="margin-bottom: 6px">@Model.GameSettings.Player1.Formation.FormationTitle</h3>
+            <h4 id="p1Budget" class="budget">£</h4>
+
+
+            @for (int index = 0; index < 7; index++)
+            {
+
+                <button id="@i" type="button" class="Player Player1">
+                    Sub
+                </button>
+
+                i++;
+            }
+        </div>
+
+
+        <div class="flex-containerP1">
+            @foreach (var item in Model.GameSettings.Player1.Formation.FormationArray)
+            {
+                <button id="@i" type="button" class="Player Player1">
+                    @item
+                </button>
+                i++;
+            }
+        </div>
+
     </div>
 
+    <div class="flex-containerStartAndSub">
+        <div class="flex-containerP2">
+            @foreach (var item in Model.GameSettings.Player2.Formation.FormationArray)
+            {
+                <button id="@i" type="button" class="Player Player2">
+                    @item
+                </button>
+                i++;
+            }
+        </div>
+        <div class="flex-containerP2">
+            <h1>@Model.GameSettings.Player2.Name</h1>
+            <h3 style="margin-bottom: 6px">@Model.GameSettings.Player2.Formation.FormationTitle</h3>
+            <h4 id="p2Budget" class="budget">£</h4>
 
-    <div class="flex-containerP2">
-        <h1>@Model.GameSettings.Player2.Name</h1>
-        <h2>@Model.GameSettings.Player2.Formation.FormationTitle</h2>
-        @foreach (var item in Model.GameSettings.Player2.Formation.FormationArray)
-        {
-            <button id="@i" type="button" class="Player Player2">
-                @item
-            </button>
 
-            i++;
-        }
+            @for (int index = 0; index < 7; index++)
+            {
+
+                <button id="@i" type="button" class="Player Player2">
+                    Sub
+                </button>
+
+                i++;
+            }
+        </div>
+
     </div>
 </div>
-
 
 
 
@@ -50,14 +83,13 @@
 <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-body"  id="choiceList">
-                    <button id='choice0' class='choice'><br><br><br><br><br><br></button>
-                    <button id='choice1' class='choice'><br></button>
-                    <button id='choice2' class='choice'><br></button>
-                    <button id='choice3' class='choice'><br></button>
-                    <button id='choice4' class='choice'><br></button>
-                </div>
+            <div class="modal-body" id="choiceList">
+                <button id='choice0' class='choice'><br><br><br><br><br><br></button>
+                <button id='choice1' class='choice'><br></button>
+                <button id='choice2' class='choice'><br></button>
+                <button id='choice3' class='choice'><br></button>
+                <button id='choice4' class='choice'><br></button>
             </div>
         </div>
     </div>
-    </div>
+</div>

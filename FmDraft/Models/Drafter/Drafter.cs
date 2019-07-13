@@ -7,15 +7,18 @@ namespace FmDraft.Models
 {
     public class Drafter
     {
+        Random rng;
+        string[] allPositions;
         List<Player> pool;
         public Drafter(List<Player> players)
         {
+            this.rng = new Random();
             this.pool = players;
+            this.allPositions = new string[] { "GK", "D (R)", "D (L)", "D (C)", "DM", "M (C)", "M (L)", "M (R)", "AM (C)", "AM (L)", "AM (R)", "ST (C)" };
         }
 
         private void Shuffle(List<Player> list)
         {
-            Random rng = new Random();
             int n = list.Count;
             while (n > 1)
             {
@@ -27,8 +30,21 @@ namespace FmDraft.Models
             }
         }
 
+        public Player FindByIdAndPick(string playerId)
+        {
+            Player player =  pool.Find(p => p.Id.ToString().Equals(playerId.Trim()));
+            pool.Remove(player);
+            return player;
+        }
+
         public List<Player> GetFive(string position)
         {
+
+            if (position.Trim().Equals("Sub"))
+            {
+                int randomIndex = rng.Next(0, allPositions.Length + 1);
+                position = allPositions[randomIndex];
+            }
             System.Diagnostics.Debug.WriteLine("Samlet pool:" + pool.Count);
             System.Diagnostics.Debug.WriteLine("Position: "+position.Trim());
 

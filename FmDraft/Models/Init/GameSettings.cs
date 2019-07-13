@@ -9,8 +9,7 @@ namespace FmDraft.Models.Init
 {
     public class GameSettings
     {
-        int round = 1;
-        public int Round { get { return round; } set {round = value ;} }
+        Drafter drafter;
         private static GameSettings instance = null;
         private static readonly object padlock = new object();
         private GameSettings()
@@ -32,6 +31,10 @@ namespace FmDraft.Models.Init
             }
         }
     
+        public Drafter GetDrafter()
+        {
+            return drafter;
+        }
 
         public User Player1 { get; set; }
         public User Player2 { get; set; }
@@ -45,15 +48,11 @@ namespace FmDraft.Models.Init
         }
 
 
-        public List<Player> GetPlayerPool()
-        {
-            return playerPool;
-        }
-
         public void SetPlayerPool()
         {
             PlayerPoolFactory factory = new PlayerPoolFactory(divisionList);
             playerPool = factory.GetPlayerPool();
+            drafter = new Drafter(playerPool);
         }
 
         public bool InitializeGame(InitViewModel inputData)

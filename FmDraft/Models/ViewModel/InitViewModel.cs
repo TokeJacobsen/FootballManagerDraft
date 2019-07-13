@@ -1,4 +1,5 @@
-﻿using FmDraft.Models.Init;
+﻿using FmDraft.Models.DAO;
+using FmDraft.Models.Init;
 using FmDraft.Models.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -31,16 +32,20 @@ namespace FmDraft.Models
 
         public InitViewModel()
         {
-          Formations formations = new Formations();
-          formationsDictionary = formations.GetFormations();
-          formationListItems = new List<SelectListItem>();
+
+            formationsDictionary = FormationsList.GetFormations();
+
+
+            formationListItems = new List<SelectListItem>();
           foreach (string key in formationsDictionary.Keys)
           {
                 formationListItems.Add(new SelectListItem { Text = key, Value = key });
           }
 
           List<Division> divisions = DivisionList.GetDivisionList();
-          divisionListItems = new List<SelectListItem>();
+            
+
+            divisionListItems = new List<SelectListItem>();
           foreach (Division div in divisions)
           {
               divisionListItems.Add(new SelectListItem { Text = $"{div.Name} ({div.Nation})", Value = div.Name });
@@ -55,12 +60,11 @@ namespace FmDraft.Models
 
         public string FormationP1 { get; set; }
         public string FormationP2 { get; set; }
+        public long Budget { get; set; }
 
 
 
 
-
-        
 
     }
 }

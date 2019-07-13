@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FMDraftModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="FMDraftModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Clubs">
           <Key>
             <PropertyRef Name="ID_Club" />
@@ -20,6 +20,24 @@
           <Property Name="ID_Division" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DivisionName" Type="varchar" MaxLength="50" />
           <Property Name="Based" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Formations">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="For1" Type="varchar" MaxLength="6" />
+          <Property Name="For2" Type="varchar" MaxLength="6" />
+          <Property Name="For3" Type="varchar" MaxLength="6" />
+          <Property Name="For4" Type="varchar" MaxLength="6" />
+          <Property Name="For5" Type="varchar" MaxLength="6" />
+          <Property Name="For6" Type="varchar" MaxLength="6" />
+          <Property Name="For7" Type="varchar" MaxLength="6" />
+          <Property Name="For8" Type="varchar" MaxLength="6" />
+          <Property Name="For9" Type="varchar" MaxLength="6" />
+          <Property Name="For10" Type="varchar" MaxLength="6" />
+          <Property Name="For11" Type="varchar" MaxLength="6" />
+          <Property Name="ForTitle" Type="varchar" MaxLength="16" />
         </EntityType>
         <EntityType Name="Players">
           <Key>
@@ -82,6 +100,66 @@
           <Property Name="Hight" Type="int" Nullable="false" />
           <Property Name="Weight" Type="tinyint" Nullable="false" />
         </EntityType>
+        <EntityType Name="Players_Copy_Virker">
+          <Key>
+            <PropertyRef Name="ID_Player2" />
+          </Key>
+          <Property Name="ID_Player2" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" />
+          <Property Name="Nationality" Type="varchar" MaxLength="50" />
+          <Property Name="Club" Type="varchar" MaxLength="50" />
+          <Property Name="Acceleration" Type="tinyint" />
+          <Property Name="Workrate" Type="tinyint" />
+          <Property Name="Vision" Type="tinyint" />
+          <Property Name="Thowing" Type="tinyint" />
+          <Property Name="Tendency_to_punch_ball" Type="tinyint" />
+          <Property Name="Technique" Type="tinyint" />
+          <Property Name="Teamwork" Type="tinyint" />
+          <Property Name="Tackling" Type="tinyint" />
+          <Property Name="Strentgh" Type="tinyint" />
+          <Property Name="Stamina" Type="tinyint" />
+          <Property Name="Rushing_out" Type="tinyint" />
+          <Property Name="Reflexes" Type="tinyint" />
+          <Property Name="Positioning" Type="tinyint" />
+          <Property Name="Pentalty_kick" Type="tinyint" />
+          <Property Name="Passing" Type="tinyint" />
+          <Property Name="Pace" Type="tinyint" />
+          <Property Name="One_on_one" Type="tinyint" />
+          <Property Name="Off_the_ball" Type="tinyint" />
+          <Property Name="Natural_fitness" Type="tinyint" />
+          <Property Name="Marking" Type="tinyint" />
+          <Property Name="Long_throw" Type="tinyint" />
+          <Property Name="Longshot" Type="tinyint" />
+          <Property Name="Leadership" Type="tinyint" />
+          <Property Name="Kicking" Type="tinyint" />
+          <Property Name="Jumping" Type="tinyint" />
+          <Property Name="Heading" Type="tinyint" />
+          <Property Name="Handling" Type="tinyint" />
+          <Property Name="Free_kick" Type="tinyint" />
+          <Property Name="Flair" Type="tinyint" />
+          <Property Name="First_touch" Type="tinyint" />
+          <Property Name="Finishing" Type="tinyint" />
+          <Property Name="Eccentricity" Type="tinyint" />
+          <Property Name="Dribbling" Type="tinyint" />
+          <Property Name="Determination" Type="tinyint" />
+          <Property Name="Decisions" Type="tinyint" />
+          <Property Name="Crossing" Type="tinyint" />
+          <Property Name="Corner_kick" Type="tinyint" />
+          <Property Name="Concentration" Type="tinyint" />
+          <Property Name="Composure" Type="tinyint" />
+          <Property Name="Communication" Type="tinyint" />
+          <Property Name="Command_of_area" Type="tinyint" />
+          <Property Name="Bravery" Type="tinyint" />
+          <Property Name="Balance" Type="tinyint" />
+          <Property Name="Anticipation" Type="tinyint" />
+          <Property Name="Agility" Type="tinyint" />
+          <Property Name="Aggression" Type="tinyint" />
+          <Property Name="Aerial" Type="tinyint" />
+          <Property Name="Value" Type="varchar" MaxLength="10" />
+          <Property Name="Division" Type="varchar" MaxLength="50" />
+          <Property Name="Based" Type="varchar" MaxLength="50" />
+          <Property Name="Position" Type="varchar" MaxLength="10" />
+        </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -119,7 +197,9 @@
         <EntityContainer Name="FMDraftModelStoreContainer">
           <EntitySet Name="Clubs" EntityType="Self.Clubs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Divisions" EntityType="Self.Divisions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Formations" EntityType="Self.Formations" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Players" EntityType="Self.Players" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Players_Copy_Virker" EntityType="Self.Players_Copy_Virker" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Clubs_Divisions" Association="Self.FK_Clubs_Divisions">
             <End Role="Divisions" EntitySet="Divisions" />
@@ -130,8 +210,7 @@
             <End Role="Players" EntitySet="Players" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FMDraftModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -263,7 +342,87 @@
             <End Role="Clubs" EntitySet="Clubs" />
             <End Role="Players" EntitySet="Players" />
           </AssociationSet>
+          <EntitySet Name="Formations" EntityType="FMDraftModel.Formations" />
+          <EntitySet Name="Players_Copy_Virker" EntityType="FMDraftModel.Players_Copy_Virker" />
         </EntityContainer>
+        <EntityType Name="Formations">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="For1" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="For2" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="For3" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="For4" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="For5" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="For6" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="For7" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="For8" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="For9" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="For10" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="For11" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="ForTitle" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Players_Copy_Virker">
+          <Key>
+            <PropertyRef Name="ID_Player2" />
+          </Key>
+          <Property Name="ID_Player2" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Club" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Acceleration" Type="Byte" />
+          <Property Name="Workrate" Type="Byte" />
+          <Property Name="Vision" Type="Byte" />
+          <Property Name="Thowing" Type="Byte" />
+          <Property Name="Tendency_to_punch_ball" Type="Byte" />
+          <Property Name="Technique" Type="Byte" />
+          <Property Name="Teamwork" Type="Byte" />
+          <Property Name="Tackling" Type="Byte" />
+          <Property Name="Strentgh" Type="Byte" />
+          <Property Name="Stamina" Type="Byte" />
+          <Property Name="Rushing_out" Type="Byte" />
+          <Property Name="Reflexes" Type="Byte" />
+          <Property Name="Positioning" Type="Byte" />
+          <Property Name="Pentalty_kick" Type="Byte" />
+          <Property Name="Passing" Type="Byte" />
+          <Property Name="Pace" Type="Byte" />
+          <Property Name="One_on_one" Type="Byte" />
+          <Property Name="Off_the_ball" Type="Byte" />
+          <Property Name="Natural_fitness" Type="Byte" />
+          <Property Name="Marking" Type="Byte" />
+          <Property Name="Long_throw" Type="Byte" />
+          <Property Name="Longshot" Type="Byte" />
+          <Property Name="Leadership" Type="Byte" />
+          <Property Name="Kicking" Type="Byte" />
+          <Property Name="Jumping" Type="Byte" />
+          <Property Name="Heading" Type="Byte" />
+          <Property Name="Handling" Type="Byte" />
+          <Property Name="Free_kick" Type="Byte" />
+          <Property Name="Flair" Type="Byte" />
+          <Property Name="First_touch" Type="Byte" />
+          <Property Name="Finishing" Type="Byte" />
+          <Property Name="Eccentricity" Type="Byte" />
+          <Property Name="Dribbling" Type="Byte" />
+          <Property Name="Determination" Type="Byte" />
+          <Property Name="Decisions" Type="Byte" />
+          <Property Name="Crossing" Type="Byte" />
+          <Property Name="Corner_kick" Type="Byte" />
+          <Property Name="Concentration" Type="Byte" />
+          <Property Name="Composure" Type="Byte" />
+          <Property Name="Communication" Type="Byte" />
+          <Property Name="Command_of_area" Type="Byte" />
+          <Property Name="Bravery" Type="Byte" />
+          <Property Name="Balance" Type="Byte" />
+          <Property Name="Anticipation" Type="Byte" />
+          <Property Name="Agility" Type="Byte" />
+          <Property Name="Aggression" Type="Byte" />
+          <Property Name="Aerial" Type="Byte" />
+          <Property Name="Value" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Division" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Based" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Position" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -358,6 +517,86 @@
                 <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
                 <ScalarProperty Name="version" ColumnName="version" />
                 <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Formations">
+            <EntityTypeMapping TypeName="FMDraftModel.Formations">
+              <MappingFragment StoreEntitySet="Formations">
+                <ScalarProperty Name="ForTitle" ColumnName="ForTitle" />
+                <ScalarProperty Name="For11" ColumnName="For11" />
+                <ScalarProperty Name="For10" ColumnName="For10" />
+                <ScalarProperty Name="For9" ColumnName="For9" />
+                <ScalarProperty Name="For8" ColumnName="For8" />
+                <ScalarProperty Name="For7" ColumnName="For7" />
+                <ScalarProperty Name="For6" ColumnName="For6" />
+                <ScalarProperty Name="For5" ColumnName="For5" />
+                <ScalarProperty Name="For4" ColumnName="For4" />
+                <ScalarProperty Name="For3" ColumnName="For3" />
+                <ScalarProperty Name="For2" ColumnName="For2" />
+                <ScalarProperty Name="For1" ColumnName="For1" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Players_Copy_Virker">
+            <EntityTypeMapping TypeName="FMDraftModel.Players_Copy_Virker">
+              <MappingFragment StoreEntitySet="Players_Copy_Virker">
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Based" ColumnName="Based" />
+                <ScalarProperty Name="Division" ColumnName="Division" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Aerial" ColumnName="Aerial" />
+                <ScalarProperty Name="Aggression" ColumnName="Aggression" />
+                <ScalarProperty Name="Agility" ColumnName="Agility" />
+                <ScalarProperty Name="Anticipation" ColumnName="Anticipation" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="Bravery" ColumnName="Bravery" />
+                <ScalarProperty Name="Command_of_area" ColumnName="Command_of_area" />
+                <ScalarProperty Name="Communication" ColumnName="Communication" />
+                <ScalarProperty Name="Composure" ColumnName="Composure" />
+                <ScalarProperty Name="Concentration" ColumnName="Concentration" />
+                <ScalarProperty Name="Corner_kick" ColumnName="Corner_kick" />
+                <ScalarProperty Name="Crossing" ColumnName="Crossing" />
+                <ScalarProperty Name="Decisions" ColumnName="Decisions" />
+                <ScalarProperty Name="Determination" ColumnName="Determination" />
+                <ScalarProperty Name="Dribbling" ColumnName="Dribbling" />
+                <ScalarProperty Name="Eccentricity" ColumnName="Eccentricity" />
+                <ScalarProperty Name="Finishing" ColumnName="Finishing" />
+                <ScalarProperty Name="First_touch" ColumnName="First_touch" />
+                <ScalarProperty Name="Flair" ColumnName="Flair" />
+                <ScalarProperty Name="Free_kick" ColumnName="Free_kick" />
+                <ScalarProperty Name="Handling" ColumnName="Handling" />
+                <ScalarProperty Name="Heading" ColumnName="Heading" />
+                <ScalarProperty Name="Jumping" ColumnName="Jumping" />
+                <ScalarProperty Name="Kicking" ColumnName="Kicking" />
+                <ScalarProperty Name="Leadership" ColumnName="Leadership" />
+                <ScalarProperty Name="Longshot" ColumnName="Longshot" />
+                <ScalarProperty Name="Long_throw" ColumnName="Long_throw" />
+                <ScalarProperty Name="Marking" ColumnName="Marking" />
+                <ScalarProperty Name="Natural_fitness" ColumnName="Natural_fitness" />
+                <ScalarProperty Name="Off_the_ball" ColumnName="Off_the_ball" />
+                <ScalarProperty Name="One_on_one" ColumnName="One_on_one" />
+                <ScalarProperty Name="Pace" ColumnName="Pace" />
+                <ScalarProperty Name="Passing" ColumnName="Passing" />
+                <ScalarProperty Name="Pentalty_kick" ColumnName="Pentalty_kick" />
+                <ScalarProperty Name="Positioning" ColumnName="Positioning" />
+                <ScalarProperty Name="Reflexes" ColumnName="Reflexes" />
+                <ScalarProperty Name="Rushing_out" ColumnName="Rushing_out" />
+                <ScalarProperty Name="Stamina" ColumnName="Stamina" />
+                <ScalarProperty Name="Strentgh" ColumnName="Strentgh" />
+                <ScalarProperty Name="Tackling" ColumnName="Tackling" />
+                <ScalarProperty Name="Teamwork" ColumnName="Teamwork" />
+                <ScalarProperty Name="Technique" ColumnName="Technique" />
+                <ScalarProperty Name="Tendency_to_punch_ball" ColumnName="Tendency_to_punch_ball" />
+                <ScalarProperty Name="Thowing" ColumnName="Thowing" />
+                <ScalarProperty Name="Vision" ColumnName="Vision" />
+                <ScalarProperty Name="Workrate" ColumnName="Workrate" />
+                <ScalarProperty Name="Acceleration" ColumnName="Acceleration" />
+                <ScalarProperty Name="Club" ColumnName="Club" />
+                <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID_Player2" ColumnName="ID_Player2" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
