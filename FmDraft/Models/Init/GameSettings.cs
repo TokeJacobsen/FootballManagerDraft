@@ -1,4 +1,5 @@
 ﻿using FmDraft.Models.Generator;
+using FmDraft.Models.ValutaStrategy;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -12,6 +13,8 @@ namespace FmDraft.Models.Init
         Drafter drafter;
         private static GameSettings instance = null;
         private static readonly object padlock = new object();
+        public Valuta valuta;
+
         private GameSettings()
         {
 
@@ -35,11 +38,10 @@ namespace FmDraft.Models.Init
         {
             return drafter;
         }
-
+        public long Budget { get; set; }
         public User Player1 { get; set; }
         public User Player2 { get; set; }
 
-        List<Player> playerPool;
         List<String> divisionList;
 
         public List<String> DivisionList {
@@ -50,9 +52,8 @@ namespace FmDraft.Models.Init
 
         public void SetPlayerPool()
         {
-            PlayerPoolFactory factory = new PlayerPoolFactory(divisionList);
-            playerPool = factory.GetPlayerPool();
-            drafter = new Drafter(playerPool);
+            PlayerPoolFactory factory = new PlayerPoolFactory(divisionList, valuta);
+            drafter = new Drafter(factory.GetPlayerPool());
         }
 
         public bool InitializeGame(InitViewModel inputData)
@@ -67,7 +68,6 @@ namespace FmDraft.Models.Init
                 Player1.Formation = inputData.FormationsDictionary[inputData.FormationP1];
             else
                 return false;
-
 
             Player2 = new User();
             if (inputData.PlayerTwo != null)
@@ -85,16 +85,22 @@ namespace FmDraft.Models.Init
             else
                 return false;
 
-            SetPlayerPool();
-            if(playerPool.Count < 22)
+            if (inputData.Budget != 0)
+                Budget = inputData.Budget;
+            else
+                return false;
+
+                valuta = ValutaFactory.GetValuta(inputData.Valuta);
+            if (valuta == null)
             {
                 return false;
             }
 
-            foreach (var item in playerPool)
-            {
-                Debug.WriteLine(item.Name);
+            SetPlayerPool();
 
+            if (drafter.GetCount ()< 22)
+            {
+                return false;
             }
 
             return true;

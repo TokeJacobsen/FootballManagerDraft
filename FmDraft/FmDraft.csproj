@@ -170,6 +170,10 @@
     <Compile Include="Models\Generator\PlayerFactory.cs" />
     <Compile Include="Models\Generator\PlayerPoolFactory.cs" />
     <Compile Include="Models\Init\GameSettings.cs" />
+    <Compile Include="Models\Init\ValutaFactory.cs" />
+    <Compile Include="Models\ValutaStrategy\BritishPound.cs" />
+    <Compile Include="Models\ValutaStrategy\DanishKrone.cs" />
+    <Compile Include="Models\ValutaStrategy\Valuta.cs" />
     <Compile Include="Models\ViewModel\InitViewModel.cs" />
     <Compile Include="Models\DAO\DivisionList.cs" />
     <Compile Include="Models\DAO\FormationsList.cs" />

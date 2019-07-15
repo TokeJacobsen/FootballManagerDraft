@@ -34,7 +34,7 @@ namespace FmDraft.Models
         public byte Anticipation { get; set; }
         public byte Agility { get; set; }
         public byte Aggression { get; set; }
-        public double Value { get; set; }
+        public int Value { get; set; }
         public string Position { get; set; }
         public byte Age { get; set; }
         public int Height { get; set; }

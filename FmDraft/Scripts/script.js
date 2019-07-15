@@ -1,7 +1,10 @@
 ﻿var turnArray = [];
 var currentTurn = 0;
-var budget =
+var symbol = "";
 window.onload = function () {
+
+    symbol = $("#valuta").html();
+    alert(symbol)
 
     let notReady = true;
     do {
@@ -21,9 +24,6 @@ window.onload = function () {
         }
     } while (notReady)
     
-
-        budget = prompt("Budget in £?");
-        $(".budget").html(numberWithCommas(budget)+"£")
 
         if (getTurn() == 1) {
             $(".Player2").prop("disabled", true);
@@ -71,7 +71,7 @@ window.onload = function () {
             $(".choice").val("");
         }
         let currentBudget = stringToNumber($("#p" + buttonValue.activePlayer + "Budget").html());
-        $("#p" + buttonValue.activePlayer + "Budget").html(numberWithCommas(currentBudget - buttonValue.price) + "£")
+        $("#p" + buttonValue.activePlayer + "Budget").html(numberWithCommas(currentBudget - buttonValue.price) + " " + symbol)
 
         $.post("/draft/select", { playerId: buttonValue.playerId, activePlayerId: buttonValue.activePlayer }, function (data) {
          
@@ -94,7 +94,7 @@ window.onload = function () {
 
 function createPlayer(playerObject) {
 
-        return "<p>" + playerObject.Name + "</p><p>" + playerObject.Club.Name + "</p><p>" + numberWithCommas(playerObject.Value) + "£</p><p>" + playerObject.Position + "</p><span class='attributes'>" + setTechnicalAttributes(playerObject) + setMentalAttributes(playerObject) + setPhysicalAttributes(playerObject) + "</span>"
+    return "<p>" + playerObject.Name + "</p><p>" + playerObject.Club.Name + "</p><p>" + numberWithCommas(playerObject.Value) + " " + symbol +"</p > <p>" + playerObject.Position + "</p> <span class='attributes'>" + setTechnicalAttributes(playerObject) + setMentalAttributes(playerObject) + setPhysicalAttributes(playerObject) + "</span>"
     }
 
 
@@ -122,7 +122,7 @@ function setTechnicalAttributes(playerObject) {
     }
 
 function stringToNumber(value) {
-    return value.replace(".", "").replace("£", "").split(",").join("")
+    return value.replace(".", "").replace("£", "").replace("DKK","").split(",").join("")
     }
 
 function getTurn() {

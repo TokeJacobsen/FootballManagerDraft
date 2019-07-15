@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FmDraft.Models.ValutaStrategy;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -23,7 +24,7 @@ namespace FmDraft.Models.Generator
             return instance;
         }
 
-        public Player GetPlayer(Players player)
+        public Player GetPlayer(Players player, Valuta valuta)
         {
             Goalkeeper newPlayer = new Goalkeeper();
             newPlayer.Id = player.ID_Player;
@@ -75,7 +76,7 @@ namespace FmDraft.Models.Generator
             newPlayer.Teamwork = player.Teamwork;
             newPlayer.TendencyToPunch = player.Tendency_to_punch_ball;
             newPlayer.Throwing = player.Thowing;
-            newPlayer.Value = DataCleaner.ConvertValueToNumber(player.Value);
+            newPlayer.Value = (int)valuta.Convert(DataCleaner.ConvertValueToNumber(player.Value));
             newPlayer.Vision = player.Vision;
             newPlayer.Weight = player.Weight;
             newPlayer.Workrate = player.Workrate;

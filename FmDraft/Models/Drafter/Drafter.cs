@@ -17,6 +17,10 @@ namespace FmDraft.Models
             this.allPositions = new string[] { "GK", "D (R)", "D (L)", "D (C)", "DM", "M (C)", "M (L)", "M (R)", "AM (C)", "AM (L)", "AM (R)", "ST (C)" };
         }
 
+        public int GetCount()
+        {
+            return pool.Count;
+        }
         private void Shuffle(List<Player> list)
         {
             int n = list.Count;

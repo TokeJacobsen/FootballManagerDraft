@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Text.RegularExpressions;
 
 namespace FmDraft.Models.Generator
 {
@@ -14,19 +10,22 @@ namespace FmDraft.Models.Generator
             if (value.EndsWith("K"))
             {
                 value = value.Replace("K", "").Replace("£", "");
-                price = Convert.ToDouble(value) * 1000;
+                price = Convert.ToDouble(value, System.Globalization.CultureInfo.InvariantCulture);
+                price *= 1000;
             }
             else if (value.EndsWith("M"))
             {
                 if (value.Contains("."))
                 {
                     value = value.Replace("M", "").Replace("£", "");
-                    price = Convert.ToDouble(value) * 100000;
+                    price = Convert.ToDouble(value, System.Globalization.CultureInfo.InvariantCulture);
+                    price *= 100000;
                 }
                 else
                 {
                     value = value.Replace("M", "").Replace("£", "");
-                    price = Convert.ToDouble(value) * 1000000;
+                    price = Convert.ToDouble(value, System.Globalization.CultureInfo.InvariantCulture);
+                    price *= 1000000;
                 }
             }
 

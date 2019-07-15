@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FmDraft.Models.ValutaStrategy;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,11 +10,12 @@ namespace FmDraft.Models.Generator
     {
         private List<string> divisions;
         List<Player> playerPool;
-        public PlayerPoolFactory(List<string> divisions)
+        Valuta valuta;
+        public PlayerPoolFactory(List<string> divisions, Valuta valuta)
         {
             playerPool = new List<Player>();
             this.divisions = divisions;
-
+            this.valuta = valuta;
         }
         public List<Player> GetPlayerPool()
         {
@@ -30,12 +32,12 @@ namespace FmDraft.Models.Generator
                         if (player.Position.Equals("GK"))
                         {
                             factory = GoalkeeperFactory.GetInstance();
-                            playerPool.Add(factory.GetPlayer(player));
+                            playerPool.Add(factory.GetPlayer(player, valuta));
                         }
                         else
                         {
                             factory = OutfieldPlayerFactory.GetInstance();
-                            playerPool.Add(factory.GetPlayer(player));
+                            playerPool.Add(factory.GetPlayer(player, valuta));
                         }
                     }
                 }

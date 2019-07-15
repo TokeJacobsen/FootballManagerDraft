@@ -7,6 +7,7 @@
 <script src="~/Scripts/script.js"></script>
 
 <h2>Draft</h2>
+<p id="valuta" style="display:none">@Model.GameSettings.valuta.GetSymbol()</p>
 
 <div class="flex-containerMain">
 
@@ -20,7 +21,7 @@
 
             <h1>@Model.GameSettings.Player1.Name</h1>
             <h3 style="margin-bottom: 6px">@Model.GameSettings.Player1.Formation.FormationTitle</h3>
-            <h4 id="p1Budget" class="budget">£</h4>
+            <h4 id="p1Budget" class="budget">@Model.GameSettings.Budget @Model.GameSettings.valuta.GetSymbol()</h4>
 
 
             @for (int index = 0; index < 7; index++)
@@ -60,7 +61,7 @@
         <div class="flex-containerP2">
             <h1>@Model.GameSettings.Player2.Name</h1>
             <h3 style="margin-bottom: 6px">@Model.GameSettings.Player2.Formation.FormationTitle</h3>
-            <h4 id="p2Budget" class="budget">£</h4>
+            <h4 id="p2Budget" class="budget">@Model.GameSettings.Budget @Model.GameSettings.valuta.GetSymbol()</h4>
 
 
             @for (int index = 0; index < 7; index++)

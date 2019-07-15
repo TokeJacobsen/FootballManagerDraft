@@ -11,10 +11,11 @@ using System.Web.UI;
 
 namespace FmDraft.Controllers
 {
+    [OutputCache(Location = OutputCacheLocation.None, NoStore = true)]
+
     public class HomeController : Controller
     {
 
-        [OutputCache(Location = OutputCacheLocation.None, NoStore = true)]
         public ActionResult Index()
         {
 

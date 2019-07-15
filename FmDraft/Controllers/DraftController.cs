@@ -7,9 +7,12 @@ using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 
 namespace FmDraft.Controllers
 {
+    [OutputCache(Location = OutputCacheLocation.None, NoStore = true)]
+
     public class DraftController : Controller
     {
         Drafter drafter = GameSettings.Instance.GetDrafter();

@@ -174,9 +174,7 @@ select[multiple], select[size] {
     align-self: center;
     height: 100px;
     width: 200px;
-    color: red;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+
 }
 
 .player-group {
