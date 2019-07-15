@@ -22,8 +22,7 @@
 
         <div class="playerGroup">
             @Html.LabelFor(model => model.PlayerOne, htmlAttributes: new { @class = "" })
-
-            @Html.EditorFor(model => model.PlayerOne, new { htmlAttributes = new { @class = "form-group" } })
+            @Html.EditorFor(model => model.PlayerOne, new { htmlAttributes = new { @class = "form-group", @id = "player1" } })
             @Html.ValidationMessageFor(model => model.PlayerOne, "", new { @class = "text-danger" })
             @Html.DropDownListFor(model => model.FormationP1, Model.formationListItems, "Choose formation");
 
@@ -31,7 +30,7 @@
 
         <div class="playerGroup">
             @Html.LabelFor(model => model.PlayerTwo, htmlAttributes: new { @class = "" })
-            @Html.EditorFor(model => model.PlayerTwo, new { htmlAttributes = new { @class = "form-group" } })
+            @Html.EditorFor(model => model.PlayerTwo, new { htmlAttributes = new { @class = "form-group", @id = "player2" } })
             @Html.ValidationMessageFor(model => model.PlayerTwo, "", new { @class = "text-danger" })
             @Html.DropDownListFor(model => model.FormationP2, Model.formationListItems, "Choose formation");
 
@@ -39,7 +38,7 @@
         <div class="playerGroup">
 
             @Html.LabelFor(model => model.Budget, htmlAttributes: new { @class = "", @style = "margin-right: 5px;" })
-            @Html.EditorFor(model => model.Budget, new { htmlAttributes = new { @type = "number" } })
+            @Html.EditorFor(model => model.Budget, new { htmlAttributes = new { @type = "number", @id = "budget" } })
             @Html.DropDownListFor(model => model.Valuta, Model.valutas, "Choose currency ");
 
         </div>

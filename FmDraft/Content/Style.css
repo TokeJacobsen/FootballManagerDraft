@@ -170,12 +170,25 @@ select[multiple], select[size] {
 }
 
 .start {
-    margin-top:50px;
+    margin-top: 50px;
     align-self: center;
     height: 100px;
     width: 200px;
+    color: red;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
 }
 
 .player-group {
     align-items: center;
+}
+
+.start-ready {
+    margin-top: 50px;
+    align-self: center;
+    height: 100px;
+    width: 200px;
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
 }
