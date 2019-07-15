@@ -3,8 +3,10 @@
 @{
     ViewBag.Title = "Initialization";
 }
-<script src="~/Scripts/script1.js"></script>
+<script src="~/Scripts/scriptInit.js"></script>
 
+
+<p class="test">TEST TEST TEST</p>
 
 <h2>Initialization</h2>
 
@@ -23,8 +25,6 @@
 
     </div>
 
-    @Html.ListBoxFor(model => model.ChosenDivisions, Model.divisionListItems, new { @class = "league-list" , @id = "leagues"});
-
     <div class="form-group">
         @Html.LabelFor(model => model.PlayerTwo, htmlAttributes: new { @class = "control-label col-md-2" })
         @Html.EditorFor(model => model.PlayerTwo, new { htmlAttributes = new { @class = "form-group" } })
@@ -32,6 +32,9 @@
         @Html.DropDownListFor(model => model.FormationP2, Model.formationListItems, "Choose formation");
 
     </div>
+
+    @Html.ListBoxFor(model => model.ChosenDivisions, Model.divisionListItems, new { @class = "league-list", @id = "leagues" });
+
 
 
     <input type="submit" value="Create" class="btn btn-default" />

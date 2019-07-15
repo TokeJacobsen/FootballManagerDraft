@@ -1,5 +1,5 @@
 ﻿window.onload = function () {
 
-    $("leagues").selectselectbox();
+    $("#leagues").css("background-color", "red");
 
 };
