@@ -157,7 +157,25 @@
 
 
 select[multiple], select[size] {
-    height:500px;
+    height:300px;
+    width: 250px;
+    text-align: center;
 }
 
+.all-players{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
 
+}
+
+.start {
+    margin-top:50px;
+    align-self: center;
+    height: 100px;
+    width: 200px;
+}
+
+.player-group {
+    align-items: center;
+}

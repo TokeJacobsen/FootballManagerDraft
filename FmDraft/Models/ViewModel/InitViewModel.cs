@@ -15,6 +15,10 @@ namespace FmDraft.Models
         Dictionary<string, Formation> formationsDictionary;
         public List<SelectListItem> formationListItems;
         public List<SelectListItem> divisionListItems;
+        public List<SelectListItem> valutas;
+        string[] valutaArray;
+
+
         List<String> chosenDivisions;
 
         [DisplayName("Division")]
@@ -32,6 +36,7 @@ namespace FmDraft.Models
 
         public InitViewModel()
         {
+            valutaArray = new string[] { "British Pound", "Danish Krone" };
 
             formationsDictionary = FormationsList.GetFormations();
 
@@ -51,17 +56,25 @@ namespace FmDraft.Models
               divisionListItems.Add(new SelectListItem { Text = $"{div.Name} ({div.Nation})", Value = div.Name });
           }
 
+
+            valutas = new List<SelectListItem>();
+            for (int i = 0; i < valutaArray.Length; i++)
+            {
+                valutas.Add(new SelectListItem { Text = valutaArray[i], Value = valutaArray[i] });
+            }
+
         }
 
-        [DisplayName("Name of player 1")]
+        [DisplayName("Player 1")]
         public string PlayerOne { get; set; }
-        [DisplayName("Name of player 2")]
+        [DisplayName("Player 2")]
         public string PlayerTwo { get; set; }
 
         public string FormationP1 { get; set; }
         public string FormationP2 { get; set; }
+        [DisplayName("Budget")]
         public long Budget { get; set; }
-
+        public string Valuta { get; set; }
 
 
 
